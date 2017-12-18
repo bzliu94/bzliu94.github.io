@@ -1,4 +1,51 @@
 # Brian's perambulations
+## 2017-12-18
+
+It turns out that we need to modify both our floating-point MM article and details previously added to this blog.
+
+We wish to have p-way q-bit interleaving and de-interleaving and with history; as it turns out, our standard p-way q-bit approach does not have history. Also, false p-way q-bit interleaving (i.e. without any interleaving at all) supports history in a fairly straightforward way. Also, we have reason we like false approach irrespective of history support - it is free, as opposed to introducing a factor of log(n) ^ 2 to one of our bottlenecks, which prevents overall factor from becoming log(n) ^ 5, and keeps it at log(n) ^ 3.
+
+Also, polylog(n) factor for repeated FFT passes and iterated logarithm is in O(log(n) ^ 2), not O(log(n)); this is a result of having at most around five FFT passes.
+
+Also, we still have Demmel-Hida-related log(n) factor.
+
+If we are still interested in showing time for standard p-way q-bit interleaving, we should assume (if we assume at all) that p = O(n) and q = O(m \* log(n) ^ 2), not that q is just in O(m \* log(n)).
+
+Also, of relatively great importance is to note that narrowing of downward filter makes finding complements for a node affordable enough; this is not just for rational case; it is for floating-point case, as well. The concern is that in the worst case, we cannot just pre-maturely truncate, as finding complement (i.e. by subtracting union) means the result significand could move quite far to the right before we get a result one bit for later use for a query.
+
+A current goal is to implement standard p-way q-bit bit interleaving and de-interleaving (s.t. we use magic bits) anyway.
+
+## 2017-12-15
+
+We can have p-way q-bit bit interleaving (i.e. n-d Morton code) via three possible ways:
+
+* Brute-force - time is O(1 / w \* p \* q)
+
+  We spend O(1) time per bit, of which there are p \* q. We are fairly fine-grained and we even generously assume we have blocking. This is too expensive.
+
+* Nuetzel original - time is O(p ^ 2 / w \* log(p) \* log(q))
+
+  This is good for d = 2 s.t. p == 2. We use pre-computed magic numbers, but we are too coarse by having expanded signals. This is too expensive.
+
+* Nuetzel hybrid - O(p / w \* log(p) \* log(q))
+
+  Presumably, we pre-determine calculate magic numbers for each unique level in the n-d Morton code call tree. This is cheap enough.
+
+Nuetzel approach is 2-way q-bit bit interleaving.
+
+The two Nuetzel approaches use divide and conquer.
+
+These approaches have been for forward Morton code transform, but we can also have the same times for reverse Morton code transform as long as we replace 2-way q-bit bit interleaving with 2-way q-bit bit de-interleaving. The latter we have not come across a general approach for, though we can deduce what we would need by extrapolating existing approaches for certain fixed bit-sizes that we have come across.
+
+Also, we don't quite understand how Zhang packed FFT works, but it is likely better than un-packed FFT or else they would not have published it.
+
+Current resources of interest:
+
+* Anderson - Bit twiddling hacks - Interleaving bits (2005)
+* Giesen - Decoding Morton codes (2009)
+* Nuetzel - How to compute a 3-d Morton number (interleave the bits of 3 ints) (2013)
+* Nuetzel - Produce interleaving bit patterns (Morton keys) for 32-bit, 64-bit, and 128-bit (2013)
+
 ## 2017-12-10
 Working on a number of projects.
 
