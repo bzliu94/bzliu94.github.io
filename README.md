@@ -1,4 +1,12 @@
 # Brian's perambulations
+## 2017-12-30
+
+We believe we have an approach for floating-point MM that takes time O(m / m' \* n ^ 2 \* log(n) ^ 3).
+
+We had to add a lot of details for having exact floating-point summation.
+
+The result is that the cross-over point relative to brute-force MM is approximately c \* 981 for small c; c could be, say, 15.
+
 ## 2017-12-18
 
 It turns out that we need to modify both our floating-point MM article and details previously added to this blog.
