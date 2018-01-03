@@ -1,4 +1,14 @@
 # Brian's perambulations
+## 2018-01-02
+
+We had a small moment of doubt when it comes to Nuetzi hybrid de-interleave, but it turned out that we were double-counting a log(n) factor.
+
+Zhang NTT FFT describes word-packed convolution; we can, if necessary or if only to make appropriating of the technique mentioned in the article easier, view Fourier transform as a special case of acyclic (or padded cyclic) convolution s.t. one vector is all ones.
+
+Also, we note that Nuetzi hybrid approach that we mention requires that the vector size be a power of two; we can use zero-padding for this.
+
+Also, we found copies of Anna Karenina and The Count of Monte Cristo.
+
 ## 2017-12-30
 
 We believe we have an approach for floating-point MM that takes time O(m / m' \* n ^ 2 \* log(n) ^ 3).
@@ -27,21 +37,23 @@ A current goal is to implement standard p-way q-bit bit interleaving and de-inte
 
 We can have p-way q-bit bit interleaving (i.e. n-d Morton code) via three possible ways:
 
-* Brute-force - time is O(1 / w \* p \* q)
+* Brute-force - time is O(m / m' \* p \* q)
 
   We spend O(1) time per bit, of which there are p \* q. We are fairly fine-grained and we even generously assume we have blocking. This is too expensive.
 
-* Nuetzel original - time is O(p ^ 2 / w \* log(p) \* log(q))
+* Nuetzi original - time is O(m / m' \* p ^ 2 \* log(p) \* log(q))
 
   This is good for d = 2 s.t. p == 2. We use pre-computed magic numbers, but we are too coarse by having expanded signals. This is too expensive.
 
-* Nuetzel hybrid - O(p / w \* log(p) \* log(q))
+* Nuetzi hybrid - O(m / m' \* p \* log(p) \* log(q))
 
   Presumably, we pre-determine calculate magic numbers for each unique level in the n-d Morton code call tree. This is cheap enough.
 
-Nuetzel approach is 2-way q-bit bit interleaving.
+m is essentially q and m' is word size.
 
-The two Nuetzel approaches use divide and conquer.
+Nuetzi approach is 2-way q-bit bit interleaving.
+
+The two Nuetzi approaches use divide and conquer.
 
 These approaches have been for forward Morton code transform, but we can also have the same times for reverse Morton code transform as long as we replace 2-way q-bit bit interleaving with 2-way q-bit bit de-interleaving. The latter we have not come across a general approach for, though we can deduce what we would need by extrapolating existing approaches for certain fixed bit-sizes that we have come across.
 
@@ -51,8 +63,8 @@ Current resources of interest:
 
 * Anderson - Bit twiddling hacks - Interleaving bits (2005)
 * Giesen - Decoding Morton codes (2009)
-* Nuetzel - How to compute a 3-d Morton number (interleave the bits of 3 ints) (2013)
-* Nuetzel - Produce interleaving bit patterns (Morton keys) for 32-bit, 64-bit, and 128-bit (2013)
+* Nuetzi - How to compute a 3-d Morton number (interleave the bits of 3 ints) (2013)
+* Nuetzi - Produce interleaving bit patterns (Morton keys) for 32-bit, 64-bit, and 128-bit (2013)
 
 ## 2017-12-10
 Working on a number of projects.
