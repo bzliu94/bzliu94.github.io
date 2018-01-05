@@ -1,4 +1,10 @@
 # Brian's perambulations
+## 2018-01-05
+
+We need to revise f.p. MM article and come up with diagrams. Unfortunately, I don't have access to a drawing tablet currently; so, we will have to draw on paper and then scan the pictures. Through this process, we will hopefully get a better picture of the details for the algorithm (e.g. in what manner do we apply FFT, take advantage of packing, and use bit de-interleaving and use tiles).
+
+It snowed quite a bit yesterday and it is quite windy outside today.
+
 ## 2018-01-02
 
 We had a small moment of doubt when it comes to Nuetzi hybrid de-interleave, but it turned out that we were double-counting a log(n) factor.
