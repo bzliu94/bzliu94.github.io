@@ -1,4 +1,10 @@
 # Brian's perambulations
+## 2018-01-07
+
+We currently have compressed trie with LCA with widened bins to avoid cascading overflow and tiles.
+
+We thought we could replace this with sort-less Kahan summation with meta-floats and tiles, but we did not notice that the error is acceptable only if condition number is small. In practice, condition number can be huge. This is even if we carefully choose allowed relative error and machine epsilon, which bot hare based on significand size in terms of bits.
+
 ## 2018-01-05
 
 We need to revise f.p. MM article and come up with diagrams. Unfortunately, I don't have access to a drawing tablet currently; so, we will have to draw on paper and then scan the pictures. Through this process, we will hopefully get a better picture of the details for the algorithm (e.g. in what manner do we apply FFT, take advantage of packing, and use bit de-interleaving and use tiles).
