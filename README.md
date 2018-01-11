@@ -1,4 +1,47 @@
 # Brian's perambulations
+## 2018-01-10
+
+We have to remember that we have two staircases for each point arrangement, of which we have two.
+
+We realized that for a 2-D segment tree, we don't have overall O(n) leaves for lower-level trees unless we use fractional cascading. Then, we will do so and choose an arbitrary lower-level leaf for each of O(n) points and make sure that we do so consistently. This cuts down range-tree contribution polylog(n) = O(log(n) ^ 2) to O(log(n)), which keeps the bottleneck polylog(n) factor at O(log(n) ^ 3). We note that we had a factor of O(log(n) ^ 2) already due to inflation from multiple passes of FFT.
+
+A big problem is to be able to encode into or decode from binary RLE form for each memoized (not path-related) signal for nodes. We don't want to cause for time to have another O(log(n))-factor. Instead, we can convert signals into binary RLE form in time linear (and not involving a factor of O(log(n))) in number of non-all-zero words in signal. For conversion, we perform "spotting" (in the sense of the word "identifying") by skipping across all-zero or all-one words and eating into the interior side of a boundary word to get all-one or all-zero repeats quickly, which can be done via "bit-finding" operations: (1) O(m / m')-time (which is constant if m = O(m')) right-most one bit for NOT'd signal determination; or (2) left-most zero bit determination. For the former, we don't use Anderson and we do use Shankar, which uses XOR and AND and subtraction. For the latter, we normally have to reverse tiles which takes O(m / m' \* log(m')) time and use right-most one bit for NOT'd version of this reversed signal. This means we incur a cost of log(n) at a bottleneck, leading overall polylog(n) to be in O(log(n) ^ 4); instead, we reverse tiles immediately after multiple FFT passes are altogether done and maintain them so that we don't incur this extra O(log(n))-factor cost for RLE overlay operations when we are doing sum-related memoizing for lower-level leaves in 2-D range tree. Then, we incur an extra O(log(n))-factor cost for after multiple FFT passes altogether (which had overall polylog(n) = O(log(n) ^ 2)), leading the time for immediately after multiple FFT passes altogether to be overall polylog(n) = O(log(n) ^ 3), which is tolerable. We don't use expensive logarithm for the "bit-finding" operations; we go from shifted one-bit, which we get from "bit-finding" operation and go to mask directly, without finding binary offset from right or left edge of word.
+
+An important step towards having this suitable time is to be able to find right-most one bit for NOT'd signal or left-most zero bit in constant time (or, specifically, O(m / m') time) instead of O(log(w)) (where we are interchangeably using m' and w). This allows us to replace runs with code-words efficiently, assuming that we have a threshold for turning repeated zeroes (or ones) into runs s.t. we do so if the number of repeats is at least w. The binary RLE form can also be a list without incurring asymptotically more space or time cost because of this threshold.
+
+When we have binary RLE forms of signals, we can avoid encoding/decoding steps by being able to perform addition via overlay directly for two operand binary-RLE-form signals and we get back another binary-RLE-form signal. We estimate that the time for this will be linear in twice the number of non-zero words in the modifying RLE associated signal via middle-man code-words (we note that this needs a more detailed proof), assuming runs have min. length of w.
+
+We are essentially dealing with topology for RLE-related encoding, overlaying, and trie preparation in the sense that we do for e.g. higher-order Voronoi via Zavershynskyi/Papadopoulou and their detailed circle events.
+
+We note that a maximally-large sequence of adjacent non-runs is technically a code-word (i.e. it is a "glial" code-word).
+
+We are starting to get some hope that we will attain time complexity of O(m / m' \* n ^ 2 \* log(n) ^ 3).
+
+How do we prepare binary RLE trie and use it during a query to quickly get a final (i.e. totally completed for an output cell) floating-point scalar? This question is an urgent one; we mistakenly assumed that trie query will give us the final answer, when in fact we still have union-intersection arithmetic, which can involve subtraction and thus catastrophic cancellation. However, perhaps we can instead push adding of row or column "source sizes" to lower-level-leaf memoizing phase s.t. signals have sign negated and have row or column "source size" (based on whether we have for a leaf a point for a row or for a column) signal added.
+
+For including row and column sizes during memoizing time, we have for O(n) children an operation that costs O([(m \* n) + (m \* n)] / m') = O(m / m' \* n) time; this is due to having first subterm via summing components for a row or column and second subterm via size of a one-bit run. This way, trie query will give us final answer without more muddling about with floating-point exactness.
+
+Important remaining questions:
+
+* How exactly do we "spot" and convert to binary RLE form quickly? (We know that it is probably possible, but we have to be very clear.)
+* When do we apply Parseval's theorem multiple times?
+* When do we apply (false?) interleaving/de-interleaving?
+
+Edit: As for how we apply interleaving/de-interleaving, we do the following.
+
+We should remember that we have false de-interleaving in between FFT passes; this leads to overall polylog(n) = O(log(n) ^ 3). However, while space inflation affects de-interleaving time, de-interleaving does not affect space inflation, so we can proceed with O(log(n))-time reversing for each word and still have overall polylog(n) = O(log(n) ^ 3).
+
+We merge inflation-related signals as part of summing-memoizing for 2-D range tree nodes; we already factored in the time increase needed (of a factor of O(log(n) ^ 2)) as part of later steps; different same-component-same-row-or-column contributors are shifted by single powers of two; we benefit from each such signal being of size O(m) s.t. we still can take advantage of word-level parallelism and divide m by m'.
+
+In a sense, because we use false interleaving and we are lucky with sizes being O(m), we don't need re-interleaving and can just shift and add; what about shifted word boundaries, though? We respond by having word-parallel bit-shift for these inflation-related size-O(m) signals.
+
+We may now, then, have as following the actionable step of implementing word-packed NTT FFT convolution with all-ones vector via Zhang.
+
+Relevant resources:
+
+* Anderson - Bit twiddling hacks - Finding position of highest bit set (2005)
+* Shankar - Stack Overflow - How to get position of right-most set bit in C (2016)
+
 ## 2018-01-09
 
 We have made quite a bit of progress.
