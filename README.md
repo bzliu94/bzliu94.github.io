@@ -1,4 +1,8 @@
 # Brian's perambulations
+## 2018-01-13
+
+Thankfully, we are safe w.r.t. Zhang word-packed NTT-based convolution. The time, from perspective of our application (f.p. MM), is O(m / m' \* log(m) \* log(m / m' \* log(m)) = O(m / m' \* log(n) \* log(m / m' \* log(n))), which leads to bottleneck time of our algorithm at around O(n ^ 2 \* log(n) ^ 2 \* log(m / m' \* n)) (as opposed to O(n ^ 2 \* log(n) ^ 3)). Of course, if m = O(m'), as is often the case, then we have a time of O(n ^ 2 \* log(n) ^ 3), again.
+
 ## 2018-01-12
 
 Our goal is to find out time for NTT with support for full range of values describable by a word-packed floating-point number. We should remember that we also care about absolute upper bound on number of words to support such input floating-point numbers. We will assume the word size is interchangeably m' or w.
