@@ -1,4 +1,68 @@
 # Brian's perambulations
+## 2018-01-12
+
+Our goal is to find out time for NTT with support for full range of values describable by a word-packed floating-point number. We should remember that we also care about absolute upper bound on number of words to support such input floating-point numbers. We will assume the word size is interchangeably m' or w.
+
+For the following, we are in general discussing FFT.
+
+We assume that a is input coefficient max. magnitude and b is vector length.
+
+### Time for our application
+
+For forward FFT (via WHT, complex, NTT), output coefficient magnitude is bounded by b \* a. For convolution of two time-domain signals with same input coefficient max. magnitude and vector length, output time-domain signal coefficient magnitude is bounded by b \* a ^ 2 (for intermediate calculation, magnitude is bounded by (b \* a) ^ 2).
+
+Next, we add a detail: a == 2 ^ m.
+
+T_1 = log(b ^ 2 \* a ^ 2) / m' = (2 \* log(b) + 2 \* log(a)) / m' = (2 \* log(b) + 2 \* log(2 ^ m)) / m' = O((log(b) + m) / m')
+
+Then, we make an assumption: m = O(m').
+
+=> T\_1' = O(log(b) / m')
+
+And we would stop here, except if we make a second assumption: b and m are related s.t. b = O(m).
+
+=> T\_1'' = O((log(m) + m) / m') = O((2 \* m) / m') = O(m / m') = O(1)
+
+This means that if we make the two previous assumptions, FFT time is:
+
+T\_2'' = O(b \* log(b) \* T_1'') = O(b \* log(b))
+
+We note that if, instead of b, we prefer the letter n, we have time of O(n \* log(n)).
+
+### Pitfall from a particular thread
+
+We deviate from what turned out to be an assumption made by someone else that at one point in time made us worry that the time for FFT is possibly O(n \* log(n) ^ 2). We don't have enough karma to post a comment directly to someone else, so we are recording our logic for posterity here. We should note that the assumption of significand size b = O(log(n)) is totally arbitrary. An equally plausible situation is b = O(w). Then, assuming we have floating-point numbers that fit in a word (of size w) and assuming that word operations generally take O(1) time each, time will be O(n \* log(n) ^ k) with k == 1, given that we want to support all numbers representable by such a floating-point number. Also, of course, Blaeser is being generous to Jeffε s.t. technically O(n \* log(n)) is in O(n * log(n) ^ 2).
+
+Ultimately, the point is that they made a specific assumption that does not apply for our application; we should also note that they ascribe different meaning to the variable b; they have it as output significand size in bits and we say b is size of input vector.
+
+### About conventions
+
+A second source describes bound for each output coefficient for NTT-related convolution.
+
+Nayuki adheres to convention that convolution is s.t. we take two time-domain vectors and return a time-domain vector.
+
+Also, they say that if we have as input two vectors of length n s.t. each input coefficient is at most m, we have an upper bound on each output coefficient of m ^ 2 \* n.
+
+They are talking about starting with pre-NTT vectors for the input and the output is after inverse NTT; we go from (n \* m) ^ 2 to m ^ 2 \* n because for inverse FFT, we divide coefficient upper bound by n.
+
+### Next step
+
+We can proceed with Zhang; we will need to justify the time and steps for it.
+
+### Other
+
+Also, due to Bertrand's postulate, we get good proximity to a prime for NTT.
+
+Resources:
+
+* Blaeser - Stack Exchange - Complexity of computing the discrete Fourier transform? - Comment (2011)
+
+  https://cstheory.stackexchange.com/questions/8196/complexity-of-computing-the-discrete-fourier-transform
+
+* Project Nayuki - Number-theoretic transform (integer DFT) (2017)
+
+  https://www.nayuki.io/page/number-theoretic-transform-integer-dft
+
 ## 2018-01-10
 
 We have to remember that we have two staircases for each point arrangement, of which we have two.
