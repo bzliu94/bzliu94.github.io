@@ -1,4 +1,29 @@
 # Brian's perambulations
+## 2018-01-17
+
+The Zhang article mentions that Ben-Kiki has described an O(1)-time algorithm for finding left-most set bit in a word.
+
+We note that word RAM does not directly give us good f.p. MM time, but it gives us flexibility.
+
+Zhang tells us how to convolve in word-packed manner without going through FFT. We use direct definition of linear convolution, which leads to a time-domain signal, and re-write in terms of "diagonals".
+
+We might think we are stuck, but then we can refer to Rader's FFT algorithm, which defines DFT (and possibly NTT) in terms of cyclic convolution. We can then define cyclic convolution in terms of linear convolution using "cyclic prefixing". We use a prime size for cyclic convolution equal to or larger than our given size. An alternative is to use Bluestein's FFT algorithm.
+
+We determine "magic bits" for Rader-related partner signal once for each layer, of which we have at most five; we re-use these signals quite often. So, it is okay for the work for these signals to not involve time that benefits from the values being word-packed.
+
+Crisis averted! We might still be able to use Zhang and we do so to implement NTT.
+
+We still need to know whether Rader can be combined with NTT; and we have to accept another requirement - i.e. that Rader needs a prime size.
+
+Relevant resources:
+
+* Ben-Kiki et al. - Towards optimal packed string matching (2014)
+* Dunna - How do I convert circular convolution to linear convolution? (2017)
+* Rader - Discrete Fourier transforms when the number of data samples is prime (1968)
+* Wikipedia - Rader's FFT algorithm
+* Wikipedia - Convolution - Discrete convolution
+* Wikipedia - Cyclic prefix
+
 ## 2018-01-13
 
 Thankfully, we are safe w.r.t. Zhang word-packed NTT-based convolution. The time, from perspective of our application (f.p. MM), is O(m / m' \* log(m) \* log(m / m' \* log(m)) = O(m / m' \* log(n) \* log(m / m' \* log(n))), which leads to bottleneck time of our algorithm at around O(n ^ 2 \* log(n) ^ 2 \* log(m / m' \* n)) (as opposed to O(n ^ 2 \* log(n) ^ 3)). Of course, if m = O(m'), as is often the case, then we have a time of O(n ^ 2 \* log(n) ^ 3), again.
@@ -103,7 +128,9 @@ We merge inflation-related signals as part of summing-memoizing for 2-D range tr
 
 In a sense, because we use false interleaving and we are lucky with sizes being O(m), we don't need re-interleaving and can just shift and add; what about shifted word boundaries, though? We respond by having word-parallel bit-shift for these inflation-related size-O(m) signals.
 
-We may now, then, have as following the actionable step of implementing word-packed NTT FFT convolution with all-ones vector via Zhang.
+We may now, then, have next the step of somehow finding word-packed NTT FFT via Zhang.
+
+Edit: We haven't actually figured out if Zhang gives us convolution without FFT or it gives a faster FFT. The former is more tricky to make use of.
 
 Relevant resources:
 
