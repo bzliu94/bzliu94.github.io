@@ -1,4 +1,14 @@
 # Brian's perambulations
+## 2018-01-18
+
+A problem is that we are exploiting sparsity, but magic bits for Rader combined with NTT require time big-omega of m \* polylog(m) time; m \* polylog(m) is in O(n \* polylog(n)); this means that we might not be able to take advantage of when number of non-zeroes is around less than n; we are not exploiting sparsity as much as we could unless we can come up with Rader-NTT-hybrid magic bits more quickly, which may be possible, but requires further investigation.
+
+Also, we should note that we have not begun to consider processor parallelism; we are partly embarrassingly parallel, but not entirely (e.g. construction of 2-D segment tree; as opposed to queries, for which we are embarrassingly parallel).
+
+Also, we should note that we are not yet taking advantage of caching.
+
+We are going to take a break and address lower-hanging fruit. This means less fast MM, numerically robust 2-D order-1 Voronoi and order-k Voronoi. This also means that we will divert energy towards CS 61A material and CS 169 MOOC. We note that this decision is partially driven by the realization that our internal ETA for order-k Voronoi is essentially infinity at the moment. Thank goodness we have a blog to help us change course more nimbly.
+
 ## 2018-01-17
 
 The Zhang article mentions that Ben-Kiki has described an O(1)-time algorithm for finding left-most set bit in a word.
