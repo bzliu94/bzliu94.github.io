@@ -1,9 +1,48 @@
 # Brian's perambulations
+## 2018-01-28
+
+We somehow got a burst of reputation points for various StackExchange sub-organizations, so we have enough to start posting comments for CS Theory subject. We did so for a conversation between Blaeser and Jeffε.
+
+We are unsure as to how to tackle sparsity. We know that if n\_{nonzeroes, A} and n\_{nonzeroes, B} (i.e. for input matrices A and B) are <= n, the worst-case output non-zeroes is n ^ 2 and time in O(n ^ 2). However, at the other extreme, if we are not unlucky, for this case, we have output non-zeroes equal to one and time in O(n). We just barely reach worst-case time of O(n ^ 2) with the two caps on number of non-zeroes for A and B, so when we surpass the caps, we can resort to our fancy algorithm, which guarantees time softly quadratic in n. Conveniently, also, magic bits for Rader-NTT-hybrid takes O(n \* polylog(n)) time to generate, which is close to the boundary we have erected between brute-force and our fancy approach. We should note that this could be not as big of a deal if we have many same-size input matrices to find product for as we can re-use the Rader-NTT-hybrid-related magic bits.
+
+We should note a distinction between output trivial zeroes and non-trivial zeroes; the latter is due to cancellation. We don't actually use this concept much for our current f.p. MM approach, though, as we are not output-sensitive for this first pass.
+
+In many papers, we see that so-called sparse approaches for MM don't actually seem to provide time better than O(n ^ 2) except brute-force, which guarantees O(n \* n_nonzeroes) time. They seem to mainly have speed-up assuming omega is not two (i.e. our ability to attain omega approximately equal to two makes these approaches less appealing). This includes Lingas; Yuster and Zwick; Le Gall; Jacob and Stoeckel; Amossen and Pagh. On the other hand, we might be deceived s.t. the bounds involving O(n ^ 2) may not necessarily be tight.
+
+We might wish to also consider output non-zeroes if we have a fast way of estimating. However, we are reluctant to use existing methods (e.g. from Cohen or Amossen et al.) because they are randomized and approximate (i.e. at any given time may be totally wrong or not totally wrong but not exact). How we might use this information is to be able to consider minimal number of A-row-B-column pairs s.t. dense approach can be informed by the need to only consider these pairs and we get perfect exploitation of sparsity and get good time, except we also have to consider time for one-time operations, like determining Rader-NTT-hybrid-related magic bits, and time for finding output-nonzeroes. This said, having affordable way to find output non-zeroes consistently and exactly almost seems like it would be too good to be true.
+
+We should note that rectangular matrix multiplication can be viewed as sparse square matrix multiplication.
+
+Also, we should note that one way of concisely interpreting our first-pass approach that takes advantage of sparsity is that we are roughly optimal across worst-case configurations with given number of input non-zeroes; i.e. we ignore gap between n and n \* polylog(n), which there is precedence for because omega ignores polylog(n) factors. Phrased differently, we could instead of having a boundary at n\_nonzeroes = O(n), we can have one at n\_nonzeroes = O(n \* sqrt(polylog(n))) and the cross-over in terms of time would be more seamless.
+
+We still have not attempted non-SIMD, i.e. multiple-instruction-stream (e.g. MIMD), parallelism; parallel construction of 2-D range tree with fractional cascading seems to be the main challenge and (at some level) it seems unlikely to not be possible; however, it is possibly not the best subject to spend our time on at the moment, as if the rest of the f.p. MM algorithm works out, it will still have been a good accomplishment. If we get the that point, then we can choose to keep MIMD on backburner and chip at it gradually.
+
+Again, we plan on returning to CS 61A material; this spurt of effort should be considered out of the ordinary, as it was nagging at us to find some consistent strategy for at least marginally exploiting sparsity for f.p. MM. Also, again, it's great that we have a blog so that we can change subjects for our attention on a dime.
+
+Conversation from Stack Exchange:
+
+* Blaeser - Stack Exchange - Complexity of computing the discrete Fourier transform? - Comment (2011)
+
+  https://cstheory.stackexchange.com/questions/8196/complexity-of-computing-the-discrete-fourier-transform
+
+Sparse MM resources:
+
+* Amossen and Pagh - Faster join-projects and sparse matrix multiplications (2009)
+* Pagh - Compressed matrix multiplication (2013)
+* Le Gall - Faster algorithms for rectangular matrix multiplication (2012)
+* Yuster and Zwick - Fast sparse matrix multiplication (2005)
+
+Output non-zero estimation for MM resources:
+
+* Amossen, Campagna, Pagh - Better size estimation for sparse matrix products (2010)
+* Jacob, Stoeckel - Fast output-sensitive matrix multiplication (2015)
+* Cohen - Structure prediction and computation of sparse matrix products (1998)
+
 ## 2018-01-18
 
 A problem is that we are exploiting sparsity, but magic bits for Rader combined with NTT require time big-omega of m \* polylog(m) time; m \* polylog(m) is in O(n \* polylog(n)); this means that we might not be able to take advantage of when number of non-zeroes is around less than n; we are not exploiting sparsity as much as we could unless we can come up with Rader-NTT-hybrid magic bits more quickly, which may be possible, but requires further investigation.
 
-Also, we should note that we have not begun to consider processor parallelism; we are partly embarrassingly parallel, but not entirely (e.g. construction of 2-D segment tree; as opposed to queries, for which we are embarrassingly parallel).
+Also, we should note that we have not begun to consider processor parallelism; we are partly embarrassingly parallel, but not entirely (e.g. construction of 2-D range tree; as opposed to queries, for which we are embarrassingly parallel).
 
 Also, we should note that we are not yet taking advantage of caching.
 
@@ -70,7 +109,7 @@ We note that if, instead of b, we prefer the letter n, we have time of O(n \* lo
 
 ### Pitfall from a particular thread
 
-We deviate from what turned out to be an assumption made by someone else that at one point in time made us worry that the time for FFT is possibly O(n \* log(n) ^ 2). We don't have enough karma to post a comment directly to someone else, so we are recording our logic for posterity here. We should note that the assumption of significand size b = O(log(n)) is totally arbitrary. An equally plausible situation is b = O(w). Then, assuming we have floating-point numbers that fit in a word (of size w) and assuming that word operations generally take O(1) time each, time will be O(n \* log(n) ^ k) with k == 1, given that we want to support all numbers representable by such a floating-point number. Also, of course, Blaeser is being generous to Jeffε s.t. technically O(n \* log(n)) is in O(n * log(n) ^ 2).
+We deviate from what turned out to be an assumption made by someone else that at one point in time made us worry that the time for FFT is possibly O(n \* log(n) ^ 2). We don't have enough karma to post a comment directly to someone else, so we are recording our logic for posterity here. We should note that the assumption of significand size b = O(log(n)) is totally arbitrary. An equally plausible situation is b = O(w). Then, assuming we have floating-point numbers that fit in a word (of size w) and assuming that word operations generally take O(1) time each, time will be O(n \* log(n) ^ k) with k == 1, given that we want to support all numbers representable by such a floating-point number. Also, of course, Blaeser is being generous to Jeffε s.t. technically O(n \* log(n)) is in O(n \* log(n) ^ 2).
 
 Ultimately, the point is that they made a specific assumption that does not apply for our application; we should also note that they ascribe different meaning to the variable b; they have it as output significand size in bits and we say b is size of input vector.
 
@@ -106,7 +145,7 @@ Resources:
 
 We have to remember that we have two staircases for each point arrangement, of which we have two.
 
-We realized that for a 2-D segment tree, we don't have overall O(n) leaves for lower-level trees unless we use fractional cascading. Then, we will do so and choose an arbitrary lower-level leaf for each of O(n) points and make sure that we do so consistently. This cuts down range-tree contribution polylog(n) = O(log(n) ^ 2) to O(log(n)), which keeps the bottleneck polylog(n) factor at O(log(n) ^ 3). We note that we had a factor of O(log(n) ^ 2) already due to inflation from multiple passes of FFT.
+We realized that for a 2-D range tree, we don't have overall O(n) leaves for lower-level trees unless we use fractional cascading. Then, we will do so and choose an arbitrary lower-level leaf for each of O(n) points and make sure that we do so consistently. This cuts down range-tree contribution polylog(n) = O(log(n) ^ 2) to O(log(n)), which keeps the bottleneck polylog(n) factor at O(log(n) ^ 3). We note that we had a factor of O(log(n) ^ 2) already due to inflation from multiple passes of FFT.
 
 A big problem is to be able to encode into or decode from binary RLE form for each memoized (not path-related) signal for nodes. We don't want to cause for time to have another O(log(n))-factor. Instead, we can convert signals into binary RLE form in time linear (and not involving a factor of O(log(n))) in number of non-all-zero words in signal. For conversion, we perform "spotting" (in the sense of the word "identifying") by skipping across all-zero or all-one words and eating into the interior side of a boundary word to get all-one or all-zero repeats quickly, which can be done via "bit-finding" operations: (1) O(m / m')-time (which is constant if m = O(m')) right-most one bit for NOT'd signal determination; or (2) left-most zero bit determination. For the former, we don't use Anderson and we do use Shankar, which uses XOR and AND and subtraction. For the latter, we normally have to reverse tiles which takes O(m / m' \* log(m')) time and use right-most one bit for NOT'd version of this reversed signal. This means we incur a cost of log(n) at a bottleneck, leading overall polylog(n) to be in O(log(n) ^ 4); instead, we reverse tiles immediately after multiple FFT passes are altogether done and maintain them so that we don't incur this extra O(log(n))-factor cost for RLE overlay operations when we are doing sum-related memoizing for lower-level leaves in 2-D range tree. Then, we incur an extra O(log(n))-factor cost for after multiple FFT passes altogether (which had overall polylog(n) = O(log(n) ^ 2)), leading the time for immediately after multiple FFT passes altogether to be overall polylog(n) = O(log(n) ^ 3), which is tolerable. We don't use expensive logarithm for the "bit-finding" operations; we go from shifted one-bit, which we get from "bit-finding" operation and go to mask directly, without finding binary offset from right or left edge of word.
 
