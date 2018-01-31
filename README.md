@@ -13,17 +13,19 @@ We might wish to also consider output non-zeroes if we have a fast way of estima
 
 We should note that rectangular matrix multiplication can be viewed as sparse square matrix multiplication.
 
-Also, we should note that one way of concisely interpreting our first-pass approach that takes advantage of sparsity is that we are roughly optimal across worst-case configurations with given number of input non-zeroes; i.e. we have a gap between n and n \* polylog(n) which we could ignore, partially because there is precedence in that omega ignores polylog(n) factors. Alternatively, we could instead of having a boundary at n\_non-zeroes = O(n), we can have one at n\_non-zeroes = O(n \* polylog(n)) and the cross-over in terms of time would be more seamless.
+Also, we should note that one way of concisely interpreting our first-pass approach that takes advantage of sparsity is that we have time roughly optimal across worst-case configurations with given number of input non-zeroes; i.e. we have a gap between n and n \* polylog(n) which we could ignore, partially because there is precedence in that omega ignores polylog(n) factors. Alternatively, we could instead of having a boundary at n\_non-zeroes = O(n), we can have one at n\_non-zeroes = O(n \* polylog(n)) and the cross-over in terms of time would be more seamless. Since it seems unreasonable to currently believe omega can be two (i.e. not softly) without polylog(n) factor, one way to reasonably refine the description of our behavior is to say we have O-tilde time that is optimal across worst-case configurations with given number of input non-zeroes s.t. O-tilde hides polylog(n) factor.
 
 Brute-force approach leads to O(n \* n\_non-zeroes) time for square input matrices of size n x n because then (s.t. n\_{non-zeroes, avg.} is number of non-zeroes per A row or B column) n\_{non-zeroes, avg.} \* n ^ 2 = O(n\_non-zeroes / n \* n ^ 2) = O(n\_non-zeroes \* n). Evenly distributing non-zeroes across A rows and B columns leads to maximal blow-up in time and we argue that under no circumstances is uneven better than even for blowing up time. This time is corroborated by many sources - e.g. Yuster and Zwick; Lingas; Buluc and Gilbert.
+
+Again, we can place less emphasis on the O-tilde time for boundary between brute-force and our fancy approach being compatible with time needed for Rader-NTT-hybrid-related magic bits determination given that it seems somewhat reasonable to expect that we deal with same-size matrices s.t. we can determine the Rader-NTT-hybrid-related magic bits once and re-use them.
 
 We still have not attempted non-SIMD, i.e. multiple-instruction-stream (e.g. MIMD), parallelism; parallel construction of 2-D range tree with fractional cascading seems to be the main challenge and (at some level) it seems unlikely to not be possible; however, it is possibly not the best subject to spend our time on at the moment, as if the rest of the f.p. MM algorithm works out, it will still have been a good accomplishment. If we get the that point, then we can choose to keep MIMD on backburner and chip at it gradually.
 
 Again, we plan on returning to CS 61A material; this spurt of effort should be considered out of the ordinary, as it was nagging at us to find some consistent strategy for at least marginally exploiting sparsity for f.p. MM. Also, again, it's great that we have a blog so that we can change subjects for our attention on a dime.
 
-Conversation from Stack Exchange:
+Conversation from StackExchange:
 
-* Blaeser - Stack Exchange - Complexity of computing the discrete Fourier transform? - Comment (2011)
+* Blaeser - StackExchange - Complexity of computing the discrete Fourier transform? - Comment (2011)
 
   https://cstheory.stackexchange.com/questions/8196/complexity-of-computing-the-discrete-fourier-transform
 
@@ -136,7 +138,7 @@ Also, due to Bertrand's postulate, we get good proximity to a prime for NTT.
 
 Resources:
 
-* Blaeser - Stack Exchange - Complexity of computing the discrete Fourier transform? - Comment (2011)
+* Blaeser - StackExchange - Complexity of computing the discrete Fourier transform? - Comment (2011)
 
   https://cstheory.stackexchange.com/questions/8196/complexity-of-computing-the-discrete-fourier-transform
 
