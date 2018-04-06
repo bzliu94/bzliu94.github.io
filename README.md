@@ -1,4 +1,26 @@
 # Brian's perambulations
+## 2018-04-07
+
+I'm in China right now.
+
+I figured I should note some things that I've come across recently.
+
+Apparently, deep neural networks (DNN's) can be formulated in a way that makes heavy use of matrix multiplication, according to a recent article from EE Journal.
+
+Also, an Abstruse Goose comic recently came out that talks about the link between lucrativeness, general AI, matrix math, undergraduate math, working "by one's self" in a bedroom.
+
+Still doing remedial work.
+
+Resources:
+
+* Abstruse Goose - The $25,000,000,000,000 Matrix (April 2, 2018)
+
+  http://abstrusegoose.com/583
+
+* Leibson - EE Journal - Fifty (or Sixty) Years of Processor Development...for This? (March 29, 2018)
+
+  https://www.eejournal.com/article/fifty-or-sixty-years-of-processor-developmentfor-this
+
 ## 2018-01-31
 
 We should note that for rectangular matrix input case s.t. we have A as a n\_1 x n\_2 matrix and B as a n\_2 x n\_3 matrix, we have a more detailed cross-over condition that treats square matrix input case as a special case.
