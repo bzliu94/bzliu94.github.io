@@ -1,4 +1,105 @@
 # Brian's perambulations
+## 2018-06-17
+
+We went back to Physics 24, a freshman seminar with Prof. Jacobsen, from freshman year first semester (Fall 2007).
+
+One thing that had been nagging us was a quote from Feynman about how in the low-intensity double-slit experiment lies "the heart of quantum mechanics" and "[its] only mystery." This is apparently from the Feynman lectures from 1965.
+
+First, we must note that the standard double-slit experiment shows that particles can have wave-like behavior in that corpuscles shot at slits behave s.t. we observe interference much in the way one might expect if we shot corpuscles of water through slits on the surface of a lake.
+
+The low-intensity flavor is, in our opinion, more interesting.
+
+Where is the beef?
+
+We're just going to go ahead and state that we assume that the multiple-worlds interpretation (MWI) is valid; this is to us a particularly colorful way of remembering an appropriate way of making sense of experimental results. In our opinion, there are three meanings of "wave" that we ought to care about. They are to do with (1) imprecision, (2) filled space, (3) multiple worlds. The first is valid when e.g. considering electron orbitals in chemistry given that we assume there are sub-atomic particles flying around in a relatively small region of space. The second is valid from the perspective that particles can be represented as waves and vice versa as we are apt to do in electrical engineering via Fourier analysis. The third is valid specifically to explain sterile environments such as in low-intensity double slit and EPR. We claim that wavefunction (or matter wave) is doing double duty and covers both the first and third types (i.e. imprecision and multiple worlds).
+
+In the low-intensity double slit experiment, if treating the photons we shoot as particles were enough, why would we build up an interference pattern when we avoid determining which slit each particle passed through? Presumably, if each particle stays intact as we shoot them, they should not lead to interference ever.
+
+If treating the photons we shoot as waves were enough, that would explain how we get an interference pattern in the high-intensity case; remember that this was originally the point of the standard experiment from Young in that sometimes we should consider that particles can behave like waves. But this is an inadequate approach for the low-intensity case because we require that the photons we shoot (even allowing for particle-wave equivalence via Fourier analysis) exist as covering point-like regions in space.
+
+Let us assume we use photons to bounce off corpuscles. We know that momentum for the photon is inversely proportional to its wavelength. Resolving power for when we use this photon is also inversely proportional its wavelength and thus is proportional to its momentum. There have been experiments showing that with lower momentum when shooting these measurement-related photons near each slit we get closer to situation where we don't shoot measurement-related photons at all (as we would expect, if we assume that these measurement-related photons are prone to mucking up the paths of the corpuscles by virtue of imparting force). But, with lower momentum means worse resolving power; and it turns out that at the point where resolving power is s.t. we can distinguish between which slit a corpuscle must have gone through to the exclusion of the other, the interference pattern becomes absent and we just have a sum of two peaks as number of samples increases.
+
+With multiple-worlds interpretation, we have mechanism of superposition across worlds. One might attempt as a last gasp to avoid this; say that we treat each corpuscle as an intermediate between particle and wave. Imagine that we have a wavefront emanating from a point source that comes to cover a large expanse and when it interacts with another object it is replaced by a particle. But, as we want to be able to visualize what is happening, would we have the particle that we end up with actually making up the original wavefront in a way similar to what we like to visualize with an electron orbital from chemistry; i.e. we have some traversal pattern and we then use concept of imprecision-based wavefunction? It seems to us personally that it is unreasonable to require that we imagine this traversal pattern that turns a particle in a sterile environment into a possibly large and intricate wavefront prior to collapse unless we come up with some mental aid. And, of course, we should be in compliance with clean probabilities and collapse for the various double slit scenarios.
+
+So, let's say there is a concept of "wave" that we need to introduce that is orthogonal to both of the other two meanings of it that we mentioned before. This "wave" is one that leads us to consider multiple worlds. Let us talk about extremes; i.e. we don't consider where the boundary is between world-related collapse and world-related non-collapse for now (let alone for imprecision-related collapse/non-collapse). Presumably, world-related non-collapse is associated with sterile environment and world-related collapse is associated with what one normally encounters; this is how we arrive at a flavor of correspondence principle. As a reminder, we have correspondence principle for non-world-related small-scale, i.e. non-world-related QM, and for large-scale, e.g. relativity, s.t. they have as special cases intermediate-scale, i.e. classical physics.
+
+Using multiple-worlds interpretation, when we look at low-intensity double slit experiment, we say that upon collapse (i.e. let's just say imprecision-related and world-related collapse are the same) if precision of our measuring equipment is s.t. we can rule out a slit then we are ruling out certain worlds and we effectively select a specific world. Then, that explains why if we collapse at slits we have no interference and if we collapse at recording screen we do.
+
+We use the word "explain" loosely; this effectively is just a mental aid.
+
+Apparently, MWI is compatible with EPR as well; we have world-splitting s.t. one of two entangled particles has a certain spin in one world and a different spin in a second world; once you collapse (and we will avoid talking about what causes collapse specifically), then you know about both particles' states as you've selected a world and as the sum of the spins is fixed. Also, ostensibly this is described as not being non-local.
+
+We should mention the Copenhagen interpretation, by which we really mean a maximally non-committal interpretation. It would then be understandably more popular, given that it is also the case that we currently do not have a way to distinguish between such an approach and MWI based on current experiments (if it is possible at all). By non-committal, we mean this "Copenhagen" approach is agnostic as to giving a name to the mathematical behavior (such as having many worlds). It's been debunked that Feynman has said this specifically, but there are people who have described the default stance of many in the field (which might clumsily fall under the name of Copenhagen) as "shut up and calculate". By avoiding choosing an interpretation that goes beyond just the math, one arrives at what I admit is already present in a clean way in the summary section of Feynman's low-intensity double slit lecture. He describes straightforwardly in words "first principles" that would be sufficient to describe the observed interference/non-interference based on what we know about alternatives that is fairly non-committal and thereby avoids the risk of having some future discovery that breaks our impasse and that could make our decorational term ("many worlds") seem excessive.
+
+Quantum teleportation, used for transferring qubits, uses entanglement.
+
+Quantum cryptography also uses entanglement.
+
+Important features of quantum computers are superposition/indeterminacy and chaining. Armed with the MWI perspective, it becomes easier to imagine why in a sterile environment strategically using pre-collapse particles can be in multiple states at once. Also, depending on your computational approach, we might be entangling in a way specific to your problem and entanglement is something we spend (i.e. we must be able to re-entangle at will).
+
+A result is that we now have a bridge towards understanding the basis for quantum computing. Specifically, we have a sense of why it is plausible that for certain problems quantum computers could lead to exponential speed-up. That is, we could have an incredible number of worlds contributing to a probability distribution. However, we still need to design the algorithm s.t. we recover an answer assuming that we will not spend O(1) time for each world (i.e. a permutation from the search space). Also, we have a sense of why it is plausible that the problems that we can now solve in polynomially-bounded time is still not all of NP.
+
+More concretely, we may also like to start thinking about quantum algorithms.
+
+Relevant resources:
+
+* Topics from quantum mechanics covered briefly (Univ. of Toronto, 2010)
+
+  https://faraday.physics.utoronto.ca/GeneralInterest/QM.html
+
+* Key - Quantum interference (Univ. of Toronto)
+
+  https://faraday.physics.utoronto.ca/GeneralInterest/Key/quinterf.htm
+
+* Key - Quantum mechanics: a poor person's guide (Univ. of Toronto)
+
+  https://faraday.physics.utoronto.ca/GeneralInterest/Key/qutheory.htm
+
+* Harrison - Stern-Gerlach experiment (Univ. of Toronto, 2005)
+
+  https://faraday.physics.utoronto.ca/GeneralInterest/Harrison/SternGerlach/SternGerlach.html
+
+* Harrison - Quantum teleportation (Univ. of Toronto, 2004)
+
+  https://faraday.physics.utoronto.ca/GeneralInterest/Harrison/QuantTeleport/QuantTeleport.html
+
+* Feynman Lectures on Physics - Vol. III Ch. 1 - Quantum Behavior (1965)
+
+  http://www.feynmanlectures.caltech.edu/III_01.html
+
+* Quora - What is Einstein-Podolsky-Rosen paradox and its solution?
+
+  https://www.quora.com/What-is-Einstein-Podolsky-Rosen-paradox-and-its-solution
+
+* Quora - How does the many worlds interpretation of quantum mechanics explain the EPR paradox?
+
+  https://www.quora.com/How-does-the-many-worlds-interpretation-of-quantum-mechanics-explain-the-EPR-paradox
+
+* Quora - What is the Copenhagen interpretation?
+
+  https://www.quora.com/What-is-the-Copenhagen-interpretation
+
+* Mermin - Could Feynman have said this?
+
+  https://physicstoday.scitation.org/doi/10.1063/1.1768652
+
+## 2018-05-07
+
+Parallelism.
+
+parallelism for construction and memoization should probably work in same overall time; except, now that we possibly have parallelization for all phases, larger n should be more commonplace (due to more acceptable concrete time used) and we should be able to reach parts of the time curve where we are significantly more favorable, even after taking into account constant factors for our algorithm
+
+What do the below resources mention?
+
+Finished Pride and Prejudice on May 4th, 2018.
+
+Got root canal done in China.
+
+Relevant resources:
+
+* Datta - Efficient parallel algorithms for geometric k-clustering problems (1994)
+* Cole - Parallel merge sort (1986)
+
 ## 2018-04-07
 
 I'm in China right now.
