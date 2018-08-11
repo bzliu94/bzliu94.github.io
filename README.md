@@ -1,4 +1,12 @@
 # Brian's perambulations
+## 2018-08-11
+
+We should note that we finished, for all intents and purposes, remedial work for Physics 24 from freshman year first semester on Wednesday 7/25 afternoon.
+
+Came back from vacation in Iceland for a week from Friday 7/27 night to Friday 8/3 night.
+
+We have found a way to get close-to-optimal time for Boolean MM, i.e. a quadrarithmic-time algorithm for it that doesn't require explicit packing as for bit spread/gather. It's tricky to know how much we need to get done before we should publish and in this sense it's a bit stressful. Part and parcel with the task, I suppose. We are attempting to implement, so there could be hidden issues. Morale boost can come from writing drafts of the article. For the most part, the work is essentially a secret, for now; I wouldn't want to get front-run.
+
 ## 2018-06-17
 
 We went back to Physics 24, a freshman seminar with Prof. Jacobsen, from freshman year first semester (Fall 2007).
