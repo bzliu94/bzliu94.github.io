@@ -1,4 +1,8 @@
 # Brian's perambulations
+## 2018-08-26
+
+We are going to attempt implementing fast Johnson-Lindenstrauss transform with random projections. Then, we will attempt version with Toeplitz and circulant matrices. This is to get a sense of whether distance or inner product invariants with bounded small additive error hold reasonably not just on paper but in practice.
+
 ## 2018-08-11
 
 We should note that we finished, for all intents and purposes, remedial work for Physics 24 from freshman year first semester on Wednesday 7/25 afternoon.
