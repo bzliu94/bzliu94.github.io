@@ -1,4 +1,10 @@
 # Brian's perambulations
+## 2018-08-27
+
+We tried out other people's implementations for FJLT and figured out that there was an assumption for dot product preservation additive error bound of epsilon which is that norms of input vectors are at most one. This means that for Boolean matrix multiplication that for exact approach the bound we want is epsilon\_old / n. Then, with target dimensionality proportional to 1 / (epsilon ^ 2) = O(n ^ 2 / epsilon\_old), which is much larger than polylogarithmic in n. On the positive side, though, forcing the case that we have unit norm does seem to make the algorithm (for dimensionality reduction) give reliability as good as predicted by many papers in the sense that we often have dot product (s.t. we are less than or equal to one) that stays within small additive error.
+
+It's fun to go after transformations, but probably advisable to hold back on it given that to solve a problem it is often the case that one needs to go after a strength reduction, which is arguable diametrically opposed to finding a reframing of the problem.
+
 ## 2018-08-26
 
 We are going to attempt implementing fast Johnson-Lindenstrauss transform with random projections. Then, we will attempt version with Toeplitz and circulant matrices. This is to get a sense of whether distance or inner product invariants with bounded small additive error hold reasonably not just on paper but in practice.
