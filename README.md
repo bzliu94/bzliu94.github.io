@@ -1,4 +1,40 @@
 # Brian's perambulations
+## 2018-09-01
+
+We're interested in seeing how distance to closest neighbor decreases at worst as we increase the number of points on a hypersphere or hypercube. Intuitively, the biggest distances occur with small number of points; as we continue to add points with requirement that we have equal spacing, the distances decrease relatively less than they do earlier on. Further, say we have n points on an n-dimensional cube or sphere. One might think that by increasing the dimension at the same time that it could be the case that average distance does not approach zero as n approaches infinity. Surprisingly, we do observe decay as n approaches infinity. An important issue is to find out after scaling (to account for differences between l1 norm and l2 norm) and solving for ideal packing whether the decay implies time in O(n ^ 2 \* polylog(n)). It seems unlikely for us to actually have logarithms explicitly involved for this step, so we are hoping that this step is in O(n ^ 2) and other steps will act as bottlenecks and have logarithms involved.
+
+We are planning on using (1 + epsilon)-factor approximate NN with epsilon at most one; also, we use bichromatic approximate closest pairs and Prim's for finding approximate MST. These should be able to work even though our dimension is n (i.e. it is high). Chan 1998 has information on such tasks and his approaches do not have chance of failure as would be the case with locality-sensitive hashing. Also, it seems a lot easier to implement ANN rather than exact NN and for our application we can accept at most a constant epsilon for error ratio. This is true even though relation between l1 and l2 norms is non-trivial and we must assume that we have only the n input points (and then argue that with 2 \* n points we are strictly better; these 2 \* n points include n input points and n points resulting from XOR).
+
+These distances are important because they tell us about how XOR one-bits decreases; intuitively, since the sphere or cube has finite surface area, there must be decay in min. distances. Also, intuitively, concentrated points give good XOR for nearest neighbor; this is essentially why we consider evenly spaced out; this latter case is the opposite of the former case qualitatively.
+
+We will need to find out surface area of higher-dimensional hypercube. We can use XOR s.t. input vectors are replaced with representation vectors with at most two non-zeroes and dictionary vectors we memoize cut-out/expiry rectangles for based on neighbors. We first create MST. We're happy with 2-approximation because this just means XOR distances are multiplied by two overall, which does not affect decay order. We could later find a trade-off that reduces epsilon s.t. we can afford it. Then, we choose an entry point for the tree. Then, all other nodes are based on some node we previously memoized for.
+
+We use many upper bounds; e.g. for Euclidean vs. Manhattan distances, for sphere vs. cube, NN for islands vs. MST for tree, dimension for n-dimensional cube vs. dimension for primitive on its surface (i.e. the primitive's dimension is n - 1), adding more (i.e. O(n)) XOR-related points is at least as good as having only input points (i.e. we have n input points and possibly 2 \* n points that each ar either from input or related to result from XOR).
+
+Intermediate coefficients that are not in {0, 1}, i.e. that are possibly greater than one or that are negative (possibly counterintuitively) or that are fractional are fine as long as result coefficients for each query end up being in {0, 1} for Boolean MM. Fractional case is not desirable for Boolean MM because we would like to later for floating-point case be able to take advantage of word packing. If Boolean case does not have intermediate coefficients that take O(1) bits in a sense, having word packing would seem quite expensive for floating-point case. Thankfully, Boolean MM does appear to support only ever having handful of bits (i.e. O(1)) for intermediate coefficients.
+
+Average time is useful because it captures concept of decay and we can rewrite a certain sum of terms assuming (affordably enough) the dynamic structure for ANN always has O(n) points, even if it may have significantly less at certain moments in time.
+
+Our goal is to find the time for cut-out/expiry memoization based on decay and surface area for n-dimensional hypercube and volume for (n - 1)-dimensional hypercube. These values will involve gamma function.
+
+For n equidistant points in n dimensions, distinction between NN-island-based and MST disappears because both are associated with same weight. NN-island-based overall weight for n points bounds the same for n - 1 points in n dimensions. MST overall weight for n points bounds the same for n - 1 points in n dimensions.
+
+Other tasks include Applecare before December, crown, CS 61A and CS 169, certain math subjects, group appointment, trip overseas at close to end of September, paying Pelham pharmacy over the phone, picking up certain side-effect medications early enough, gathering old songs for piano and practicing, getting gym perks card punched, exercise (e.g. basketball), gathering certain materials for classes in high school (e.g. for AP Biology), read books for AP Literature, fixing wrong name for bill for insurance, selling certain odds and ends (e.g. music CDs, high school study aids, graphics book pair), tactile display project, refine portfolio/resume, possibly contact headhunters.
+
+Time is of the essence; we've seen quite a bit of new articles talking about MM. It seems that people may be smelling blood. We will want to implement our approach and post on arxiv.
+
+Relevant resources:
+
+* Chan - Approximate nearest neighbor queries revisited (1998)
+
+* Scott - StackExchange - Manhattan distance vs. Euclidean distance - Answer (2015)
+
+  https://math.stackexchange.com/questions/1168759/manhattan-distance-vs-euclidean-distance
+
+* EuYu - StackExchange - Hypercube maximum distance, graph theory - Answer (2012)
+
+  https://math.stackexchange.com/questions/232713/hypercube-maximum-distance-graph-theory
+
 ## 2018-08-27
 
 We tried out other people's implementations for FJLT and figured out that there was an assumption for dot product preservation additive error bound of epsilon which is that norms of input vectors are at most one. This means that for Boolean matrix multiplication that for exact approach the bound we want is epsilon\_old / n. Then, with target dimensionality proportional to 1 / (epsilon ^ 2) = O(n ^ 2 / epsilon\_old), which is much larger than polylogarithmic in n. On the positive side, though, forcing the case that we have unit norm does seem to make the algorithm (for dimensionality reduction) give reliability as good as predicted by many papers in the sense that we often have dot product (s.t. we are less than or equal to one) that stays within small additive error.
@@ -178,7 +214,7 @@ Again, we plan on returning to CS 61A material; this spurt of effort should be c
 
 Conversation from StackExchange:
 
-* Blaeser - StackExchange - Complexity of computing the discrete Fourier transform? - Comment (2011)
+* Blaeser - StackExchange - Complexity of computing the discrete Fourier transform? - Answer (2011)
 
   https://cstheory.stackexchange.com/questions/8196/complexity-of-computing-the-discrete-fourier-transform
 
@@ -291,7 +327,7 @@ Also, due to Bertrand's postulate, we get good proximity to a prime for NTT.
 
 Resources:
 
-* Blaeser - StackExchange - Complexity of computing the discrete Fourier transform? - Comment (2011)
+* Blaeser - StackExchange - Complexity of computing the discrete Fourier transform? - Answer (2011)
 
   https://cstheory.stackexchange.com/questions/8196/complexity-of-computing-the-discrete-fourier-transform
 
