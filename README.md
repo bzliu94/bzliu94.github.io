@@ -1,4 +1,24 @@
 # Brian's perambulations
+## 2018-09-02
+
+Still procrastinating.
+
+We are using n-dimensional cube and tiling using (n - 1)-dimensional spheres and then going from Euclidean distance to Manhattan distance upper bound via added sqrt(n) factor. We expect to still have decay. We may be interested in stripping out constant factors to make plotting easier. We still need to incorporate average l1-norm distance, even if (thinking into the future) we eventually are able to exploit sparsity and are dealing with not n equidistant points but perhaps with only two equidistant points; a current motto of ours is that truncated decay is still decay, but over a smaller domain. We may wish to subtract from this average a one because we need (and can afford) an entry point.
+
+To be truly confident, we would like to know if average over n terms in n-dimensional space minus one gives same order as average over two terms in n-dimensional space minus one.
+
+If due to sparsity we have only two points in n-dimensional space (e.g. if we have two non-zero A rows), we can look beyond discrete aspect and have integral s.t. we also have coarse sampling.
+
+Here is a useful result -- integral of 1 / x shifted left so that there is no singularity at x == 0 (and instead there is one at a negative x) is logarithm; this implies that we don't have to do much that is special to properly take advantage of sparsity. For our geometric approach, either an item for an A row or B column appears or it does not.
+
+So, unlike we just said on September 1st, surprisingly, it looks like logarithms for equidistant aspect may appear as long as we integrate. It's unclear at the moment whether the l1-norm distances for equidistant codes will lead to polylog(n) terms; that is power of log that may be larger than one.
+
+We can handle rectangular input matrices trivially; it is as if we just have more or fewer A rows or B columns.
+
+A more difficult thing to handle is running time in terms of number of non-zeroes; all we can do at the moment is hand-wave and say that if we have lots of zeroes, we are tending towards localizing for the codes on Hamming hypercube. Imbalance -- e.g. having much more zeroes than ones -- leads to localizing, which reduces time for pre-processing. This will have to be a future issue to consider, if we want to get desirable behavior, to get specific time bounds, and to do it justice.
+
+Based on recent news, it looks like there's competition from a school in Massachusetts.
+
 ## 2018-09-01
 
 We're interested in seeing how distance to closest neighbor decreases at worst as we increase the number of points on a hypersphere or hypercube. Intuitively, the biggest distances occur with small number of points; as we continue to add points with requirement that we have equal spacing, the distances decrease relatively less than they do earlier on. Further, say we have n points on an n-dimensional cube or sphere. One might think that by increasing the dimension at the same time that it could be the case that average distance does not approach zero as n approaches infinity. Surprisingly, we do observe decay as n approaches infinity. An important issue is to find out after scaling (to account for differences between l1 norm and l2 norm) and solving for ideal packing whether the decay implies time in O(n ^ 2 \* polylog(n)). It seems unlikely for us to actually have logarithms explicitly involved for this step, so we are hoping that this step is in O(n ^ 2) and other steps will act as bottlenecks and have logarithms involved.
