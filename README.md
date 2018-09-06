@@ -1,5 +1,7 @@
 [Classes](classes)
 
+<img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
+
 # Brian's perambulations
 ## 2018-09-02
 

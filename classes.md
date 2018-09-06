@@ -2,6 +2,8 @@
 title: Classes
 ---
 
+<img title="A porthole" src="shape2 - cropped, resized, and cleaned.png">
+
 # Classes
 
 (Fall 2007 to Fall 2012; 5.5 years; 7 regular semesters)
