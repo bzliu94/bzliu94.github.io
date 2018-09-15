@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-09-15
+
+Making progress with an idea called "protrusion ratio".
+
+<img title="Protrusion of diagonal vs. that of radius" src="protrusion1 - cropped, cleaned, and resized.png"> <img title="A close-up of protrusion" src="protrusion2 - cropped, cleaned, and resized.png">
+
 ## 2018-09-02
 
 Still procrastinating.
