@@ -3,6 +3,16 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-09-21
+
+We are going to drop Chan's ANN approach for our Boolean MM. It is hard for us to adequately tile d-dimensional space (where d is large) using spherical cones with a point arbitrarily chosen as center s.t. the cones emanate from it. Also, presumably some overlap is allowable. Supposedly, we can get (1 + epsilon)-approximate nearest neighbor via Chan, which then uses Arya and Mount's BBD-tree for each cone and then possibly an additional optimization. We wish to be able to tune s.t. we have a "branching factor" of between one and two for each dimension. But, while it is in principle plausible that we can tune to get a target number of cones, the details are unclear to us s.t. we do not end up with far too few or far too many. The difficulty of this task is related to why we ended up using hypercubes for primitives that we tile instead of using hyperspheres for primitives for Boolean MM; if packing constant is not one, then of course our tiling can be quite elaborate and we would have to justify why some packing constant is achievable.
+
+We found out that Indyk described a deterministic version of LSH (DLSH). We also had Las-Vegas-style LSH (LVLSH) planned for word-packed version of ANN -- i.e. for f.p. case of MM. The reason for this is that it supports word-packing, ostensibly. Why then would we want to pursue either DLSH or LVLSH for both Boolean or f.p. flavors of MM? DLSH is described somewhat vaguely, is older (from 2000), is for (3 + epsilon)-approximate NN, has deterministic time. LVLSH is more detailed, is newer (from 2016), is for (1 + epsilon)-approximate NN, has expected time.
+
+TO put having 2-factor vs. 4-factor in perspective, log_2(1024) = 10; 10 * 2 = 20 and 10 * 4 = 40 are both much lower than 1024. On the other hand, a peace of mind from having deterministic time instead of expected time has value, as well.
+
+We still must see if both DLSH and LVLSH work with word-packing. We will have to look into hash function families for Hamming distances (i.e. l1-norm) and possibly the same but s.t. we have no false negatives. It seems that bit sampling (for Hamming distance hash) can be done not on a bit-by-bit basis necessarily, but with a whole word at a time, by sampling uniformly from integers in \[0, 2 ^ m' - 1\], where words are m' bits large.
+
 ## 2018-09-15
 
 Making progress with an idea called "protrusion ratio".
