@@ -3,6 +3,52 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-10-10
+
+We figured Boolean MM case out! I feel almost that I ought to keep it a secret until I can finish the article, but alas. We ended up dropping so many aspects. Also, I am feeling a bit paranoid right now.
+
+This comes at the heels of a disappointment as to the actual distance for a max-weight MST for n points in n dimensions; it turns out it (in l1-norm) is in O(n), not O(1) adjusted with protrusion-related factors. This appears to be the case when we have a hypercube in n dimensions with either hypercube primitive or hypersphere primitive in n - 1 dimensions. An offset that we mindlessly introduced to bound a particular expression turned out to be too costly.
+
+The important idea is criss-crossing as an extra early pre-processing phase to merge color contributions for expiry rectangles that appear later.
+
+The result is Boolean MM in O(n ^ 2 \* log(n) ^ 2) time. The polylog factor can presumably be improved with a different tree in the future.
+
+Now, we can focus on finishing the implementation (yes -- we have not finished it completely yet) and the article. We can also mention ideas that we ended up dropping. (In the end, of course, fewer required details is better.)
+
+We also have floating-point version to consider, next.
+
+We can talk about (i) approximate NNS, use of JL lemma, turning it into a Las Vegas approach; (ii) appropriateness conditions; (iii) an Indyk paper analysis.
+
+The best part is that this addition does not require very much change to a partly-finished implementation that we already have; we need to have more expiry rectangles with different weights based on pre-processing criss-cross phase.
+
+## 2018-10-07
+
+### Tooth fixed
+I got a tooth fixed on October 1st (i.e. this past month). Last time we visited China (in around April of this past year), I got a root canal. This time, instead of a crown, I got a silicone-based filling/reconstruction. The root canal was ~900Y and the filling was ~360Y. That makes ~$150 for the former and ~$60 for the latter. Altogether, that's $210. This tooth -- a left molar -- was cut up considerably as part of an attempt to fix a metal filling that had fallen out. What's good is that with the reconstruction, the tooth is essentially whole again and the material looks like tooth material. It's a good deal!
+
+### Funds
+Reminiscing -- for freshman year, the meal plan we went for was likely non-upgraded and included as part of rent for the dorm. Based on 2018-2019 rates, a triple at unit two was likely around $14,600 for an academic year (i.e. ten months). This means each month was about $1,460.
+
+### Legitimacy of a prediction for n\_p points on a n\_d-dimensional hypersphere s.t. n\_p > n\_d + 1
+
+We are considering upper bound on distance associated with an edge for a max-weight MST for n\_p points on the surface of a hypersphere in n\_d dimensions s.t. n\_p > n\_d + 1. Typically, the maximum number of mutually equidistant points in n\_d dimensions is n\_d + 1.
+
+Why do we care about Hamiltonian paths associated with polytopes? The candidate edges are purely those relating vertices to "neighbor" vertices, which we associate with predictably-low lengths via "densifying" a net by considering n-dimensional hypercube surface area and (n - 1)-dimensional primitive hypercube volumes.
+
+We made a mistake for FMM s.t. we thought that d-simplex is a Platonic solid, but Platonic solids are three-dimensional; we care because Platonic solids are associated with Hamiltonian paths.
+
+Instead, we can show that a d-simplex is associated with a Hamiltonian path as it is a simple d-polytope and via Barnette, for d >= 4, simple d-polytopes are associated with Hamiltonian path. For d == 3, d-simplex is associated with a Hamiltonian path via Platonic solid via Gardner. Trivially, for d in {1, 2}, d-simplex is also associated with a Hamiltonian path.
+
+### Prediction for n\_p points on a n\_d-dimensional hypersphere s.t. n\_p << n\_d = m \* n\_p
+
+We get a prediction that if n\_d = m * n\_p that distance is not bounded by twenty, but by log\_2(m) \* 20.
+
+We can confirm this by performing a ratio test (i.e. use a limit).
+
+### Postscript
+
+The above concerns are associated with predictions that are wrong -- distances for l1-norm for first case and second case are not twenty and log\_2(m) \* 20, but 20 \* n and log\_2(m) \* 20 \* n.
+
 ## 2018-09-21
 
 We are going to drop Chan's ANN approach for our Boolean MM. It is hard for us to adequately tile d-dimensional space (where d is large) using spherical cones with a point arbitrarily chosen as center s.t. the cones emanate from it. Also, presumably some overlap is allowable. Supposedly, we can get (1 + epsilon)-approximate nearest neighbor via Chan, which then uses Arya and Mount's BBD-tree for each cone and then possibly an additional optimization. We wish to be able to tune s.t. we have a "branching factor" of between one and two for each dimension. But, while it is in principle plausible that we can tune to get a target number of cones, the details are unclear to us s.t. we do not end up with far too few or far too many. The difficulty of this task is related to why we ended up using hypercubes for primitives that we tile instead of using hyperspheres for primitives for Boolean MM; if packing constant is not one, then of course our tiling can be quite elaborate and we would have to justify why some packing constant is achievable.
