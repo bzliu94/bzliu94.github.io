@@ -3,6 +3,20 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-10-12
+
+I must admit that the core idea for out previous claim that we figured Boolean MM out -- collapsing colors -- was not enough. Easy come, easy go, I suppose. The reason we did not realize this was that we actually must have multiple expiry rectangles when a B column for some color has a one bit. If we only needed one, then we can customize expiries for the B column cross-color one bit pattern, which would take O(n ^ 2) time overall. If we have O(n) expiry rectangles instead of one for each B-column-color combination, then instead we have O(n ^ 3) time overall -- the idea is that each B column could have a relatively unique cross-color one-bit pattern, which aids in making this more-correct pre-processing too expensive. We remember that the point of expiry is to avoid double-counting one bits and so we would from a certain perspective need them every time we alternate from zero to one or vice versa -- not just once for each B-column-color combination.
+
+However, we have actually figured the problem out in that we can take more advantage of problem structure. We have no need for expiry rectangles at all -- given that they only are relevant when B column has a one bit for some color, we can make an additional observation (after a certain amount of floundering and consternation) that we can avoid cut-out and expiry altogether when we have a one bit for a B-column-color combination because the contribution for a prefix difference for that combination is highly predictable -- it is always one.
+
+Then, the structure construction is even cheaper than before (though not necessarily asymptotically -- i.e. in big-oh notation). We then ought to an early moment pre-process to count the number of one bits for each B column so that we can use that value and add to the result from a query (i.e. via a prefix difference).
+
+Voila!
+
+We are attempting to write this approach up in an article and attempting to implement this. Somehow, it feels that we should (as mentioned in last blog entry) be a bit secretive. Wish us luck!
+
+Of course, we should mention that in the future, we may wish to swap out the tree structure; how practical or difficult this would be is currently up in the air to us.
+
 ## 2018-10-10
 
 We figured Boolean MM case out! I feel almost that I ought to keep it a secret until I can finish the article, but alas. We ended up dropping so many aspects. Also, I am feeling a bit paranoid right now.
