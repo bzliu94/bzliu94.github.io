@@ -3,6 +3,16 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-10-13
+
+Nope, ignoring colors gives a similar approach -- expiries bias towards adding detail, ignoring colors bias towards removing detail; both may require knowing a lot about a certain B column's one-bit pattern s.t. we require O(n ^ 3) time, again.
+
+Needless to say, if this were all there was to the story, we would come to the conclusion that our attempt at Boolean MM is incomplete.
+
+We currently are pursuing an approach that is based on flattening for each color across A rows and then getting closer to the intention of having telescoping -- i.e. we have progressively more contributions (i.e. along z direction) in an efficient manner via base post-flatten shape and pair of modulating post-flatten shapes, the former of which consists of many rectangles, each of which have weight we update in O(1) time instead of in O(p) time, where p is number of rectangles that makes that base shape up via indirection (i.e. we associate each with a symbol, which we later look up weight for via a hash table). The reason we have a pair of modulating rectangles is that one is to repair a prefix and the other is for neutralizing effect of that repair for a later z. The idea is that this leads to an O(n)-factor time improvement.
+
+We even believe there is a chance that there is a quadratic-time algorithm for Boolean MM, currently, but we ought to have learned our lesson by now that quadrarithmic-time is good enough for now. We ought to implement and know that this first approach actually works.
+
 ## 2018-10-12
 
 I must admit that the core idea for out previous claim that we figured Boolean MM out -- collapsing colors -- was not enough. Easy come, easy go, I suppose. The reason we did not realize this was that we actually must have multiple expiry rectangles when a B column for some color has a one bit. If we only needed one, then we can customize expiries for the B column cross-color one bit pattern, which would take O(n ^ 2) time overall. If we have O(n) expiry rectangles instead of one for each B-column-color combination, then instead we have O(n ^ 3) time overall -- the idea is that each B column could have a relatively unique cross-color one-bit pattern, which aids in making this more-correct pre-processing too expensive. We remember that the point of expiry is to avoid double-counting one bits and so we would from a certain perspective need them every time we alternate from zero to one or vice versa -- not just once for each B-column-color combination.
