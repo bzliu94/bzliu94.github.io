@@ -3,6 +3,18 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-10-31
+
+Came back from China yesterday.
+
+The Boolean MM things are not working out. We have one last hunch to see through and after that we will come up with a post-mortem article to show what we tried as a sort of way of making sure we do not have totally nothing to show for our time.
+
+We finished My Antonia on October 30th, 2018. We'll be working on reading Oedipus.
+
+After this, we will be focusing on class work.
+
+We might like to update our class history with semesters spent at community colleges for completion.
+
 ## 2018-10-13
 
 Nope, ignoring colors gives a similar approach -- expiries bias towards adding detail, ignoring colors bias towards removing detail; both may require knowing a lot about a certain B column's one-bit pattern s.t. we require O(n ^ 3) time, again.
@@ -661,7 +673,7 @@ Questions
 Miscellaneous
 
 * BU book club (Fall 2017) - have read The Nightingale, In Cold Blood, Before the Fall, Persuasion, part of Boston Noir
-* AP English Lit. reading - Brave New World, Pride and Prejudice (halfway through), Oedipus, Heart of Darkness, The Return of the Native, Hamlet (done), Mythology (done), Uncle Vanya, Great Expectations (done), My Antonia, Macbeth (done), The Importance of Being Ernest, Crime and Punishment, Madam Bovary
+* AP English Lit. reading - Brave New World, Pride and Prejudice (done), Oedipus, Heart of Darkness, The Return of the Native, Hamlet (done), Mythology (done), Uncle Vanya, Great Expectations (done), My Antonia (done), Macbeth (done), The Importance of Being Ernest (done), Crime and Punishment, Madam Bovary
 * have not obtained - An Introduction to Fiction (Kennedy/Gioia, 9/10), Sound and Sense (Perrine, 9/10/11)
 
 Private matters
