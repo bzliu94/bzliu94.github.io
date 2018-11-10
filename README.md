@@ -3,6 +3,14 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-11-10 (again)
+
+Three things are helping us stay confident in the correctness of the approach:
+
+1. We don't need a literal rectangle train for suffix.
+2. We want suffix because we are dealing with A row prefix -- suffix is poorly named and is for B column rectangle reactionaries what prefix is for A row collections. In a sense, the former suffix and the latter prefix are the same thing -- they are truncated version of a sequence where only one end differs and no gaps are allowed in the result sequence w.r.t. original sequence.
+3. A way to prove correctness (e.g. because it may seem confusing to want a suffix for dealing with modifier) is to consider isolating fixed-z subproblems and considering them separately.
+
 ## 2018-11-10
 
 This is about Boolean MM.
