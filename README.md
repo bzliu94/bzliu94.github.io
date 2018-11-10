@@ -3,6 +3,16 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-11-10 (for third time)
+
+Well, how do we get prefix that we use by subtracting to get suffix when it comes to B column rectangle reactionary weights for modifier pre-processing? We note that individual values in modifier memoization array may be larger than one and they are nondescending as we go from high z to low z. We don't blame ourselves for neglecting to go into this issue in detail yet; the other details are just as important; how do we memoize? To get prefix, we consider number of zero bits either (1) above us only or (2) above us or at same level; choosing between those two ways of memoizing just affects how we use the memoized values. Then, we subtract so we don't have unnecessary B column rectangle reactionaries that protrude; this may sound vague, but we make sense of this description by resorting to considering fixed-z subproblems for correctness. The modifier memoized array has n entries and they are for different z value targets.
+
+We flit between being confident and uncertain about the approach we have described, but currently we feel optimistic, because we have some agreement in that when we eyeball what our modifiers give for certain small examples we do get numbers to subtract that seem appropriate or numbers that are memoized that can be used correctly later.
+
+Our next task is to work out some examples by hand.
+
+P.S. -- One might have thought we would have gone through examples by hand earlier -- and we have in a sense -- at the same time, it has been important to not be too invested in a single approach because it can be difficult to know we are in a dead-end or whether it is worth the (significant) effort to e.g. devise the necessary notation to keep the work simultaneously terse and understandable.
+
 ## 2018-11-10 (again)
 
 Three things are helping us stay confident in the correctness of the approach:
