@@ -3,6 +3,14 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-11-10 (for fourth time)
+
+We will address what are and how to use the modifier memoized array values.
+
+First, we consider relative behavior. If we have full A row prefix w.r.t. a B column, our modifier pair should give zero. Note that by full A row prefix w.r.t. a B column, we mean lowest A row up to same level as B column. To get this zero, we have x\_1 - x\_2 == 0. The x\_2 is shortening of modifier based on B column level and x\_1 is based on how non-full A row prefix is; both these values are based on modifier memoized values. If A prefix is full w.r.t. B column, x\_1 equals x\_2. How do we choose an x\_2? It is the value for the level associated with that for chosen B column.
+
+Secondly, we consider absolute behavior. We wish to avoid off-by-one error. The correct behavior is we have value describe for a level contributions strictly above that level. In other words, we do not have "at or above" behavior; we have "above" behavior. Okay, then -- what are we counting? We are counting number of zeroes in left staircase -- and we care about this amount s.t. they are strictly above our level.
+
 ## 2018-11-10 (for third time)
 
 Well, how do we get prefix that we use by subtracting to get suffix when it comes to B column rectangle reactionary weights for modifier pre-processing? We note that individual values in modifier memoization array may be larger than one and they are nondescending as we go from high z to low z. We don't blame ourselves for neglecting to go into this issue in detail yet; the other details are just as important; how do we memoize? To get prefix, we consider number of zero bits either (1) above us only or (2) above us or at same level; choosing between those two ways of memoizing just affects how we use the memoized values. Then, we subtract so we don't have unnecessary B column rectangle reactionaries that protrude; this may sound vague, but we make sense of this description by resorting to considering fixed-z subproblems for correctness. The modifier memoized array has n entries and they are for different z value targets.
