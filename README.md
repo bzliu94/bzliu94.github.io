@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-11-11
+
+We will be heading back to China for from November 12th to November 23rd.
+
+We have another detail to address that is important -- we must acknowledge that we don't always have a one bit at the right staircase. Somewhat fortuitously, as long as we occasionally omit rectangles at right, the modifier memoized values are made in the same way and are used in the same way. This is the case not because the modifier e.g. gives across-the-board zero values in some sense. Our remedy involves two details -- (1) We omit rectangles that are weighted at right if we have a zero bit for some B column; and (2) it's okay if we have a zero bit at right if we have a handful of one bits at left as the modifier continues to work correctly in this case (i.e. without requiring a change in how we determine it and use it).
+
 ## 2018-11-10 (for fourth time)
 
 We will address what are and how to use the modifier memoized array values.
