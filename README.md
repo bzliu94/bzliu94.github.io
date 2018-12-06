@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-12-06
+
+We have dropped lax Boolean, strict Boolean, f.p. (plus, times), (min, {plus, max}) (i.e. tropical) matrix MM approaches. We posted a postmortem in our FMM repository. We believe that if we are to come back to this problem later, that we will need a good understanding of tensors.
+
+Perhaps it is telling that we regret not being able to make a worthwhile article (currently) given that the typesetting we arrived at is so pleasant.
+
 ## 2018-11-11
 
 We will be heading back to China for from November 12th to November 23rd.
