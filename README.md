@@ -3,9 +3,13 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-12-09
+
+It turns out our alternate approach for (min, plus) semiring MM approach is not valid because there is a coefficient of d (i.e. our dimension) that we leave out. This d for matrix multiplication is n and so is not small and fixed (e.g. it is not two); so, the approach we are thinking of takes time that is actually n-factor larger and thus takes time at least cubic in n.
+
 ## 2018-12-07
 
-We are waffling -- we have another idea for lax Boolean semiring and (min, plus) semiring MM approaches. In 2016, we described a possible way to solve APSP that involves first solving (min, plus) MM via Chan 2008 red-blue dominance queries. We can reduce APSP to lax Boolean MM, which reduces to (min, plus) MM. The idea is that (min, plus) MM takes time in O(n ^ 2 * log(n) ^ 2), though there is a chance that the reductions may introduce extra polylogarithmic factors. It would be great if this works as then we have something to show for our time. We note that these ideas do not necessarily imply good times for strict Boolean semiring and standard (plus, times) ring flavors of MM.
+We are waffling -- we have another idea for lax Boolean semiring and (min, plus) semiring MM approaches. In 2016, we described a possible way to solve APSP that involves first solving (min, plus) MM via Chan 2008 red-blue dominance queries. We can reduce APSP to lax Boolean MM, which reduces to (min, plus) MM. The idea is that (min, plus) MM takes time in O(n ^ 2 \* log(n) ^ 2), though there is a chance that the reductions may introduce extra polylogarithmic factors. It would be great if this works as then we have something to show for our time. We note that these ideas do not necessarily imply good times for strict Boolean semiring and standard (plus, times) ring flavors of MM.
 
 ## 2018-12-06
 
