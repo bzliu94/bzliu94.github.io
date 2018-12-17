@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2018-12-17
+
+We have figured out a way to solve strict Boolean MM in O(n ^ 2 * polylog(n)) time, but it will take a while to implement and test. For our sanity's sake, though, we leave this message in case it does indeed take a long time to follow through on.
+
 ## 2018-12-09
 
 It turns out our alternate approach for (min, plus) semiring MM approach is not valid because there is a coefficient of d (i.e. our dimension) that we leave out. This d for matrix multiplication is n and so is not small and fixed (e.g. it is not two); so, the approach we are thinking of takes time that is actually n-factor larger and thus takes time at least cubic in n.
