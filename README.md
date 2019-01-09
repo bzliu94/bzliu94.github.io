@@ -3,6 +3,14 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-01-09
+
+Hope is still alive for a reasonably fast approach for strict Boolean MM.
+
+Meanwhile, here are some bits of art.
+
+<img title="Whirlpool 1a" src="whirlpool1a - cropped, resized, cropped.png"> <img title="Whirlpool 1b" src="whirlpool1b - cropped, resized, cropped.png">
+
 ## 2018-12-17
 
 We have figured out a way to solve strict Boolean MM in O(n ^ 2 * polylog(n)) time, but it will take a while to implement and test. For our sanity's sake, though, we leave this message in case it does indeed take a long time to follow through on.
