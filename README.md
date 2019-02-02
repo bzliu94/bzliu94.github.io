@@ -3,6 +3,18 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-02-02
+
+Not writing about our progress and keeping secrets is eating us up inside and leading us to be less productive.
+
+We have a way for lax Boolean MM that takes time in O(n ^ 2). We have a partial approach for strict Boolean MM -- we have pushed it to backburner in order that we may be able to buy time by solving a weaker problem -- i.e. lax Boolean MM. The partial strict approach happens to -- as an aside -- make use of our lax flavor problem. The article for lax flavor we have written up partially and we are working on implementing it, currently.
+
+Pretty incredible that the time can be strictly quadratic, no? That's a highlight -- hopefully we will implement successfully and publish to pre-print before we get front-run, though.
+
+We went to a magic show on Feb. 1st. It's pretty fun to see what one can do with sleight of hand.
+
+We have a bunch of loose strings to tie up regarding Oregon. I have some things on Amazon that are not selling and that we should probably donate to some brick and mortar store. I have some material from high school classes (e.g. AP Biology) in a filing cabinet to pull out and group into folders.
+
 ## 2019-01-09
 
 Hope is still alive for a reasonably fast approach for strict Boolean MM.
