@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-02-06
+
+We have at our disposal certain algorithms whose implementations we have generally borrowed from other people in the interest of expediency. These are disjoint set union-find data structure with union-by-size and path compression, LCA from Bender and Farach-Colton 2000, SCC algorithm from Kosaraju 1978.
+
+Now, we need flow-graph-bridge set finding, which serves to give us edge dominator set for a directed graph. Then, we use edge dominators to get strong bridges for a directed graph. Then, we use strong bridges to get 2-edge-connected blocks. We use 2-edge-connected blocks to answer 2-edge-connected queries for pairs of vertices. The first 2ECB algorithm we implement will be Simple2ECB from Georgiadis et al. 2014.
+
 ## 2019-02-02
 
 Not writing about our progress and keeping secrets is eating us up inside and leading us to be less productive.
