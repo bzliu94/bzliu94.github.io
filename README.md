@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-02-08
+
+To get to edge dominator set, we need intervals (via Tarjan's "INTERVALS") and flow-graph bridge set (via Tarjan's "BRIDGES"); before that, we need to use DFS to explicitly create a tree, using which we can get subtree size, pre-order numbering, edge classification, pretty printing. Then, using edge dominator set, we can get strong bridges.
+
 ## 2019-02-06
 
 We have at our disposal certain algorithms whose implementations we have generally borrowed from other people in the interest of expediency. These are disjoint set union-find data structure with union-by-size and path compression, LCA from Bender and Farach-Colton 2000, SCC algorithm from Kosaraju 1978.
