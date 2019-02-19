@@ -3,6 +3,14 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-02-19
+
+<img title="Incredible!" src="incredible - cropped and resized.png">
+
+We're working on implementing Simple2ECB from Georgiadis et al. 2016. As we partially mentioned, this in a sense requires Gabow/Tarjan 1985 off-line DSU, Kosaraju 1978 SCC, Bender/Farach-Colton 2000 LCA, Tarjan 1976 flow-graph bridges, Italiano et al. 2012 strong bridges. Also, Fraczak et al. 2013 dominator tree is required for Rec2ECB.
+
+Thankfully, the Fraczak article seems quite detailed and it happens to also use Gabow/Tarjan 1985 off-line DSU, which allows time linear in number of items and find/union queries. If we were more clever, we might be able to reduce vertex-dominator to edge-dominator case, though it's not clear how to then construct a terse vertex dominator tree from a collection of vertex dominators. So, we don't do that reduction and instead defer to Fraczak.
+
 ## 2019-02-08
 
 To get to edge dominator set, we need intervals (via Tarjan's "INTERVALS") and flow-graph bridge set (via Tarjan's "BRIDGES"); before that, we need to use DFS to explicitly create a tree, using which we can get subtree size, pre-order numbering, edge classification, pretty printing. Then, using edge dominator set, we can get strong bridges.
