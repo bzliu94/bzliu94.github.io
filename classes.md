@@ -6,7 +6,9 @@ title: Classes
 
 # Classes
 
-(Fall 2007 to Fall 2012; 5.5 years; 7 regular semesters)
+These are classes taken after graduating from high school.
+
+The times span from Fall 2007 to Fall 2012. Overall time spent for bachelor's is 5.5 years and 7 regular semesters.
 
 Fall 2007
 
@@ -24,7 +26,12 @@ Summer 2008
 (gap)
 
 Fall 2008  
-(gap)
+*(fall semester spent at Las Positas College)*
+
+| Class | Title | Instructor(s) |
+| ---- | ---- | ---- |
+| Math 2 | Calculus II | Keune, Cynthia |
+| Phys 8A | General Physics | Ankoviak, Kevin M. |
 
 Spring 2009
 
@@ -46,10 +53,20 @@ Fall 2009
 (gap)
 
 Spring 2010  
-(gap)
+*(spring semester spent at Mission College)*
+
+| Class | Title | Instructor(s) |
+| ---- | ---- | ---- |
+| Comm 1 | Public Speaking | Ensminger, Betty |
+| Math 19 | Discrete Mathematics | Ting, Karl |
 
 Summer 2010  
-(gap)
+*(summer semester spent at Portland Community College)*
+
+| Class | Title | Instructor(s) |
+| ---- | ---- | ---- |
+| Math 256 | Differential Equations | Hughes, Chris |
+| Math 261 | Applied Linear Algebra I | Rubenstein, Ken |
 
 Fall 2010
 
