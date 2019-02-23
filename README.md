@@ -1,4 +1,4 @@
-[Classes](classes)
+[Taken courses](taken-courses)
 
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 

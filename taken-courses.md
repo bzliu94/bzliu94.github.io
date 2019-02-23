@@ -1,12 +1,14 @@
 ---
-title: Classes
+title: Taken courses
 ---
 
 <img title="A porthole" src="shape2 - cropped, resized, and cleaned.png">
 
-# Classes
+# Taken courses
 
-These are classes taken after graduating from high school.
+## Undergraduate courses
+
+These are courses taken after graduating from high school.
 
 The times span from Fall 2007 to Fall 2012. Overall time spent for bachelor's is 5.5 years and 7 regular semesters.
 
@@ -118,5 +120,23 @@ Fall 2012
 | CS 160 | User Interface Design and Development | Canny, John F. |
 | CS 164 | Programming Languages and Compilers | Hilfinger, Paul N. |
 | CS 186 | Introduction to Database Systems | Franklin, Michael |
+
+## College courses during high school
+
+*Portland Community College (PCC)*  
+CS 133U - Introduction to C - ?? (Summer 2003)  
+Math 111C - College Algebra - Warner, Marty (Spring 2005)  
+Math 112 - Elementary Functions - Warner, Marty (Summer 2005)  
+CIS 133J - Java Programming I - Foty, Terrell V. (Fall 2006)  
+Math 253 - Calculus III - Barman, Farshad (Fall 2006)  
+CIS 233J - Java Programming II - Foty, Terrell V. (Winter 2007)
+
+*Stanford Education Program for Gifted Youth (EPGY)*  
+C11A - Introduction to C Programming - Thakkar, Shilpa (Summer 2006)  
+C11B - Introduction to C Programming II - Thakkar, Shilpa (Summer 2007)
+
+*Brigham Young University Independent Study (BYU-IS)*  
+Health 41 - Health Education, Part I - Olsen, Phil (Spring 2005)  
+Jogging 41 - Jogging - Abbott, Denise (Spring 2005)
 
 
