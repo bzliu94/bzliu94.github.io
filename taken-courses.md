@@ -124,7 +124,7 @@ Fall 2012
 ## College courses during high school
 
 *Portland Community College (PCC)*  
-CS 133U - Introduction to C - ?? (Summer 2003)  
+CS 133U - Introduction to C - Noel, Michael J. (Summer 2003)  
 Math 111C - College Algebra - Warner, Marty (Spring 2005)  
 Math 112 - Elementary Functions - Warner, Marty (Summer 2005)  
 CIS 133J - Java Programming I - Foty, Terrell V. (Fall 2006)  
