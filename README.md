@@ -3,6 +3,16 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-03-30
+
+We've implemented Tarjan 1976 INTERVALS and BRIDGES, Italiano et al. strong bridges. Our implementation of INTERVALS and BRIDGES is ready for swapping out of standard DSU structure for Gabow/Tarjan 1985 off-line DSU structure that uses links instead of standard unions; however, we have not implemented that Gabow/Tarjan structure yet, though we believe we understand how to. We are working on Georgiadis et al. 2014 Simple2ECB. The algorithm ought to be O(n ^ 3 * alpha(n, n ^ 2))-time.
+
+## 2019-03-17
+
+We've figured out Gabow/Tarjan 1985 macroset/microset-based off-line DSU, Tarjan 1976 flow-graph INTERVALS and BRIDGES; we have gone through the articles for them and we believe we have filled in gaps in the descriptions. Now, we will attempt to implement Simple2ECB and judge correctness based on if we get the right answers for our application (i.e. we run a gauntlet). First, we do what it takes to get correct answers and then we will swap out parts for faster versions. Ultimately, the algorithm ought to be O(n ^ 3 * alpha(n, n ^ 2))-time.
+
+To get whether two nodes are 2-edge-connected, we take advantage of 2-edge-connected blocks partitioning the vertex set and check if the two nodes are in same 2-edge-connected block in constant time.
+
 ## 2019-02-19
 
 <img title="Incredible!" src="incredible - cropped and resized.png">
