@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-03-30 (again)
+
+Splendid success! We implemented reduction of lax Boolean MM to Simple2ECB and SCC algorithms. We appear to be getting the same answer as brute-force. This approach is slower than brute-force in terms of asymptotic complexity. It is a proof of concept. Now, we work on Georgiadis et al. 2014 Rec2ECB and Fast2ECB, Gabow/Tarjan 1985 off-line DSU, Fraczak et al. 2013 vertex dominator tree.
+
 ## 2019-03-30
 
 We've implemented Tarjan 1976 INTERVALS and BRIDGES, Italiano et al. strong bridges. Our implementation of INTERVALS and BRIDGES is ready for swapping out of standard DSU structure for Gabow/Tarjan 1985 off-line DSU structure that uses links instead of standard unions; however, we have not implemented that Gabow/Tarjan structure yet, though we believe we understand how to. We are working on Georgiadis et al. 2014 Simple2ECB. The algorithm ought to be O(n ^ 3 * alpha(n, n ^ 2))-time.
