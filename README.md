@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-04-13
+
+We have figured out almost all of the seven Fraczak et al. 2013 dominator tree algorithms. Now, we are planning on polishing our implementations. This means we can move on to Georgiadis et al. 2014 Rec2ECB and Fast2ECB soon or Gabow/Tarjan 1985 off-line DSU. DFS tree is the union tree we use for off-line DSU. We also have to figure out auxiliary graph for Georgaidis et al. 2014.
+
 ## 2019-03-30 (again)
 
 Splendid success! We implemented reduction of lax Boolean MM to Simple2ECB and SCC algorithms. We appear to be getting the same answer as brute-force. This approach is slower than brute-force in terms of asymptotic complexity. It is a proof of concept. Now, we work on Georgiadis et al. 2014 Rec2ECB and Fast2ECB, Gabow/Tarjan 1985 off-line DSU, Fraczak et al. 2013 vertex dominator tree.
