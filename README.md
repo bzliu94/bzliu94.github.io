@@ -5,7 +5,7 @@
 # Brian's perambulations
 ## 2019-04-17
 
-We have finished the seven Fraczak et al. 2013 dominator tree algorithms, except in making use of Gabow-Tarjan 1985 off-line DSU algorithm s.t. time would be linear in \|E\|. We choose to focus on algorithm GD #2 and it takes time that is in O(\|E\| \* alpha(\|V\|, \|E\|). Now, we plan to work on Rec2ECB and Fast2ECB from Georgiadis et al. 2014.
+We have finished implementing the seven Fraczak et al. 2013 dominator tree algorithms s.t. they are as efficient as promised from original article with exception that we do not use Gabow-Tarjan 1985 off-line DSU algorithm. As such, a few of them have time nearly linear in \|E\|; i.e. the time is in O(\|E\| \* alpha(\|V\|, \|E\|). We choose to focus on algorithm GD #2. Now, we plan to work on Rec2ECB and Fast2ECB from Georgiadis et al. 2014. Later, we will make use of Gabow-Tarjan DSU to speed up GD #2 to take time linear in \|E\| under certain model of computation.
 
 ## 2019-04-13
 
