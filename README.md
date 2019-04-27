@@ -3,6 +3,14 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-04-27
+
+Turns out there's a bug with our approach of using 2-edge-connectivity to answer lax Boolean MM -- it is possible to contaminate whether we have enough paths by looping around back to right side using behind node.
+
+Briefly, we considered whether 1-edge-connectivity (i.e. strongly connected components) is enough. Those ideas did not pan out.
+
+Thankfully, we have a new idea and it uses 2-vertex-connectivity. Somewhat reassuringly, 2-vertex-connectivity queries can be done in O(1) time as well, pre-processing takes time linear in number of nodes and edges, the algorithms are slightly more difficult to implement w.r.t. 2-edge-connectivity, we can maximally take advantage of sparsity. Also, there is a simple version as well that we can use for proof of concept and testing cases that we fail for 2-edge-connectivity-based approach. Also, we don't have to throw all our previous algorithm implementations away and pieces we don't need anymore can be laid to rest by testing them for correctness by comparing to results for simple versions of those algorithms (i.e. simple versions for them generally do seem to exist, which is also good).
+
 ## 2019-04-25
 
 It's a little bit crazy to think that I've been working on some version of fast MM since end of 2017.
