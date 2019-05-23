@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-05-23
+
+We recently fixed Simple2ECB from Georgiadis et al. 2014. We are working on Rec2ECB with emphasis on correctness; time also is still not yet O(m * n * alpha). We need to determine five cases (two bridge-related and three shortcut-related) in lower time. The first two cases are for auxiliary nodes and auxiliary edges. The last three cases are for auxiliary edges only. After we complete Rec2ECB, we will be relatively close to finishing Fast2ECB efficiently, as well. A key is that we need to distinguish between overall ordinary nodes/edges and locally ordinary nodes/edges.
+
 ## 2019-04-27
 
 Turns out there's a bug with our approach of using 2-edge-connectivity to answer lax Boolean MM -- it is possible to contaminate whether we have enough paths by looping around back to right side using behind node.
