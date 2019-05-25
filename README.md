@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-05-25
+
+We recently implemented Rec2ECB from Georgiadis et al. 2014; its time is O(m * n * alpha). Now, we will work on Fast2ECB.
+
 ## 2019-05-23
 
 We recently fixed Simple2ECB from Georgiadis et al. 2014. We are working on Rec2ECB with emphasis on correctness; time also is still not yet O(m * n * alpha). We need to determine five cases (two bridge-related and three shortcut-related) in lower time. The first two cases are for auxiliary nodes and auxiliary edges. The last three cases are for auxiliary edges only. After we complete Rec2ECB, we will be relatively close to finishing Fast2ECB efficiently, as well. A key is that we need to distinguish between overall ordinary nodes/edges and locally ordinary nodes/edges.
