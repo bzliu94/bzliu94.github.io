@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-05-25 (again)
+
+We recently implemented Fast2ECB from Georgiadis et al. 2014; its time is O((m + n) * alpha). An important detail is that more than one strong bridge may appear to remain for third layer, but that at most one of them we care about (though, this is possibly linked to idea that some strong bridges are separating nodes that are not both overall ordinary. Now, we will work on SimpleVRB from Georgiadis et al. 2015.
+
 ## 2019-05-25
 
 We recently implemented Rec2ECB from Georgiadis et al. 2014; its time is O(m * n * alpha). Now, we will work on Fast2ECB.
