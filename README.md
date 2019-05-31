@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-05-30
+
+It turns out that algorithms for 2-vertex-connectivity from Georgiadis et al. 2015 tend to re-use algorithms for 2-edge-connectivity from Georgiadis et al. 2014 together with concept of vertex-resilience. So, we're not throwing away as many details as we previously believed we would need to; on the contrary, we're getting quite a bit of bang for our spent-time buck and 2-edge-connectivity together with strong bridge and interval/bridge algorithms are not just warm-up and corrections to the articles that present their pseudocode are fair game for content for our article.
+
 ## 2019-05-25 (again)
 
 We recently implemented Fast2ECB from Georgiadis et al. 2014; its time is O((m + n) * alpha). An important detail is that more than one strong bridge may appear to remain for third layer, but that at most one of them we care about (though, this is possibly linked to idea that some strong bridges are separating nodes that are not both overall ordinary. Now, we will work on SimpleVRB from Georgiadis et al. 2015.
