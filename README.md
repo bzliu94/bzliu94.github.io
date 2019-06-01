@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-06-01
+
+We fix refine operations by requiring at least one family out of two to have groups that are pair-wise disjoint. We name groups. Time becomes linear instead of quadratic in number of nodes. For modified refine (for vertex-resilient blocks), if current B block has node x, then replacements for block B all have node x. For regular refine, both blocks and SCC-related partition are families that are internally broken into groups that are pair-wise disjoint. For modified refine, only SCC-related partition are s.t. it consists of groups that are pair-wise disjoint. We take advantage of fact that if we break into separate parts that an element from one part and an element from another never can be merged into same group again (except in sense that we may clone and two nodes with same name are in different groups).
+
 ## 2019-05-31
 
 We made a mistake with Simple2ECB and subsequently Fast2ECB s.t. they are slower than they should be. We note first of all that refine(B\_set, S\_set, x) from 2-vertex-connectivity article is step 3.2 from Simple2ECB with x being undefined. We implement step 3.2 s.t. it takes time in O(m \* n), when it should take time in O(m). This is doable via implementing it using bucket sort, which Georgiadis et al. go into relatively more detail in their 2-vertex-connectivity article in a sense.
