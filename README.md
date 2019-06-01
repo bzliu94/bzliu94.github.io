@@ -3,21 +3,25 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-05-31
+
+We made a mistake with Simple2ECB and subsequently Fast2ECB s.t. they are slower than they should be. We note first of all that refine(B\_set, S\_set, x) from 2-vertex-connectivity article is step 3.2 from Simple2ECB with x being undefined. We implement step 3.2 s.t. it takes time in O(m \* n), when it should take time in O(m). This is doable via implementing it using bucket sort, which Georgiadis et al. go into relatively more detail in their 2-vertex-connectivity article in a sense.
+
 ## 2019-05-30
 
 It turns out that algorithms for 2-vertex-connectivity from Georgiadis et al. 2015 tend to re-use algorithms for 2-edge-connectivity from Georgiadis et al. 2014 together with concept of vertex-resilience. So, we're not throwing away as many details as we previously believed we would need to; on the contrary, we're getting quite a bit of bang for our spent-time buck and 2-edge-connectivity together with strong bridge and interval/bridge algorithms are not just warm-up and corrections to the articles that present their pseudocode are fair game for content for our article.
 
 ## 2019-05-25 (again)
 
-We recently implemented Fast2ECB from Georgiadis et al. 2014; its time is O((m + n) * alpha). An important detail is that more than one strong bridge may appear to remain for third layer, but that at most one of them we care about (though, this is possibly linked to idea that some strong bridges are separating nodes that are not both overall ordinary. Now, we will work on SimpleVRB from Georgiadis et al. 2015.
+We recently implemented Fast2ECB from Georgiadis et al. 2014; its time is O((m + n) \* alpha). An important detail is that more than one strong bridge may appear to remain for third layer, but that at most one of them we care about (though, this is possibly linked to idea that some strong bridges are separating nodes that are not both overall ordinary. Now, we will work on SimpleVRB from Georgiadis et al. 2015.
 
 ## 2019-05-25
 
-We recently implemented Rec2ECB from Georgiadis et al. 2014; its time is O(m * n * alpha). Now, we will work on Fast2ECB.
+We recently implemented Rec2ECB from Georgiadis et al. 2014; its time is O(m \* n \* alpha). Now, we will work on Fast2ECB.
 
 ## 2019-05-23
 
-We recently fixed Simple2ECB from Georgiadis et al. 2014. We are working on Rec2ECB with emphasis on correctness; time also is still not yet O(m * n * alpha). We need to determine five cases (two bridge-related and three shortcut-related) in lower time. The first two cases are for auxiliary nodes and auxiliary edges. The last three cases are for auxiliary edges only. After we complete Rec2ECB, we will be relatively close to finishing Fast2ECB efficiently, as well. A key is that we need to distinguish between overall ordinary nodes/edges and locally ordinary nodes/edges.
+We recently fixed Simple2ECB from Georgiadis et al. 2014. We are working on Rec2ECB with emphasis on correctness; time also is still not yet O(m \* n \* alpha). We need to determine five cases (two bridge-related and three shortcut-related) in lower time. The first two cases are for auxiliary nodes and auxiliary edges. The last three cases are for auxiliary edges only. After we complete Rec2ECB, we will be relatively close to finishing Fast2ECB efficiently, as well. A key is that we need to distinguish between overall ordinary nodes/edges and locally ordinary nodes/edges.
 
 ## 2019-04-27
 
