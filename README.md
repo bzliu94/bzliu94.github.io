@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-06-15 (again)
+
+We note that step 3.3 for FastVRB pseudocode is s.t. we execute split and implicit is the idea that we replace a block with the result of the split. This is partly supported by the fact that for step 3.5.3 we use refine by "executing" it, as well. Also, common sense tells us that given that we have no other state modified by the split operation, for the replacing to not occur would mean that step 3.3 effectively does nothing.
+
 ## 2019-06-15
 
 We're still working on FastVRB -- we are working on getting it to be correct. Later, we will work on making it efficient. Currently, we are creating FastVRB auxiliary graphs correctly, though not necessarily efficiently. Now, we are working on performing splits, though the notation in the pseudocode is a little ambiguous as to what C(r) means in step 3.2. We assume it refers to forward dominator tree and that if we are referring to C group for reverse dominator tree that we will see T as a subscript as in definition of split(B, T). Also, we are planning on replacing blocks quickly by using sets that contain block objects that wrap lists (given that lists are not hashable in Python) and by using set addition and set subtraction.
