@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-06-15
+
+We're still working on FastVRB -- we are working on getting it to be correct. Later, we will work on making it efficient. Currently, we are creating FastVRB auxiliary graphs correctly, though not necessarily efficiently. Now, we are working on performing splits, though the notation in the pseudocode is a little ambiguous as to what C(r) means in step 3.2. We assume it refers to forward dominator tree and that if we are referring to C group for reverse dominator tree that we will see T as a subscript as in definition of split(B, T). Also, we are planning on replacing blocks quickly by using sets that contain block objects that wrap lists (given that lists are not hashable in Python) and by using set addition and set subtraction.
+
 ## 2019-06-01
 
 We fix refine operations by requiring at least one family out of two to have groups that are pair-wise disjoint. We name groups. Time becomes linear instead of quadratic in number of nodes. For modified refine (for vertex-resilient blocks), if current B block has node x, then replacements for block B all have node x. For regular refine, both blocks and SCC-related partition are families that are internally broken into groups that are pair-wise disjoint. For modified refine, only SCC-related partition are s.t. it consists of groups that are pair-wise disjoint. We take advantage of fact that if we break into separate parts that an element from one part and an element from another never can be merged into same group again (except in sense that we may clone and two nodes with same name are in different groups).
