@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-06-17
+
+We tested our attempt at FastVRB and got correct answer for two inputs from Georgiadis et al. 2015 (i.e. figures two and three). Now, we work on getting it to be efficient. (It's also important to note that we have yet to implement block forest given vertex-resilient blocks.)
+
 ## 2019-06-15 (again)
 
 We note that step 3.3 for FastVRB pseudocode is s.t. we execute split and implicit is the idea that we replace a block with the result of the split. This is partly supported by the fact that for step 3.5.3 we use refine by "executing" it, as well. Also, common sense tells us that given that we have no other state modified by the split operation, for the replacing to not occur would mean that step 3.3 effectively does nothing.
