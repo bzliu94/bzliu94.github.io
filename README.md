@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-06-21
+
+As part of attempting to implement fast FastVRB, we found a bug with Fast2ECB and Rec2ECB that do not affect correctness of results but that affect speed. The bug affects speed of bucket-sort-related step for shortcut case b for 2ECB-related algorithms and shortcut case a for VRB-related algorithms. The key is that we need to merge across lists for different output auxiliary graphs, bucket sort using pre-order numbers, and then unmerge to figure out separate lists for each different output auxiliary graph. Sorting within bucket is unnecessary. This means figuring out shortcut case b edges takes time linear in size in terms of nodes of current auxiliary graph instead of our repeatedly requiring for output auxiliary graphs time linear in size of source dominator tree. This is exciting because the perceived time required from running our implementations will be even better. We also have made progress because we have in a sense finished base edges and shortcut case a edge (except for bucket sort issue) for FastVRB implementation.
+
 ## 2019-06-17
 
 We tested our attempt at FastVRB and got correct answer for two inputs from Georgiadis et al. 2015 (i.e. figures two and three). Now, we work on getting it to be efficient. (It's also important to note that we have yet to implement block forest given vertex-resilient blocks.)
