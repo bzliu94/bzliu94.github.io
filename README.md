@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-06-26
+
+All we have left for FastVRB is to transfer our implementation for constructing auxiliary graphs from forward direction to reverse direction. Of course, we technically still have to implement Gabow-Tarjan DSU structure to make the whole 2VCB algorithm faster. We need to construct block forest. Also, we thought that we would need to fix step 3.5.3 to be fast enough, but it turns out that our implementation for it (and for its analogues for 2ECB in form of step 3.2) already take time linear in N and K, where N is sum of sizes of active blocks and K is number of vertices for current subproblem.
+
 ## 2019-06-21
 
 As part of attempting to implement fast FastVRB, we found a bug with Fast2ECB and Rec2ECB that do not affect correctness of results but that affect speed. The bug affects speed of bucket-sort-related step for shortcut case b for 2ECB-related algorithms and shortcut case a for VRB-related algorithms. The key is that we need to merge across lists for different output auxiliary graphs, bucket sort using pre-order numbers, and then unmerge to figure out separate lists for each different output auxiliary graph. Sorting within bucket is unnecessary. This means figuring out shortcut case b edges takes time linear in size in terms of nodes of current auxiliary graph instead of our repeatedly requiring for output auxiliary graphs time linear in size of source dominator tree. This is exciting because the perceived time required from running our implementations will be even better. We also have made progress because we have in a sense finished base edges and shortcut case a edge (except for bucket sort issue) for FastVRB implementation.
