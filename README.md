@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-06-27 (again)
+
+We have correct and fast implementation of FastVRB.
+
 ## 2019-06-27
 
 We have a bug with FastVRB -- shortcut case a we have not implemented correctly; we are basing this assessment on example from figure five in Georgiadis et al. 2015. Also, we ought to remove self-edges.
