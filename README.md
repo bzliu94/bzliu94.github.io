@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-06-27
+
+We have a bug with FastVRB -- shortcut case a we have not implemented correctly; we are basing this assessment on example from figure five in Georgiadis et al. 2015. Also, we ought to remove self-edges.
+
 ## 2019-06-26
 
 All we have left for FastVRB is to transfer our implementation for constructing auxiliary graphs from forward direction to reverse direction. Of course, we technically still have to implement Gabow-Tarjan DSU structure to make the whole 2VCB algorithm faster. We need to construct block forest. Also, we thought that we would need to fix step 3.5.3 to be fast enough, but it turns out that our implementation for it (and for its analogues for 2ECB in form of step 3.2) already take time linear in N and K, where N is sum of sizes of active blocks and K is number of vertices for current subproblem.
