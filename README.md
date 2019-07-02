@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-07-02
+
+Got back yesterday from a three-day vacation where we visited a theme park and a water park. Finished Heart of Darkness today.
+
 ## 2019-06-27 (again)
 
 We have correct and fast implementation of FastVRB.
