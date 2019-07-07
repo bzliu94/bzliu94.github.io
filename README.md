@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-07-07
+
+We are working on Gabow-Tarjan DSU. We are correctly determining node groups and roots for each microset we plan to make. Now we need to fill out tables.
+
 ## 2019-07-02
 
 Got back yesterday from a three-day vacation where we visited a theme park and a water park. Finished Heart of Darkness today.
