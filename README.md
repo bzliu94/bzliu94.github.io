@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-07-08
+
+We are constructing micro, number, node, parent, marked mappings correctly. Parent and marked signals are word-packed. We are working on answer table, which involves re-constructing a forest (or a tree with dummy root) with all possible marked 0/1 patterns. We know parent tables are valid without performing two suggested checks (i.e. one for boundedness and one for acyclicity) by only considering parent patterns for actual microsets we see from cutting up the input union tree. Then, we spend time in O(b) for a linear-time check for pre-order traversal of a microset tree to correctly retrieve answer for 3-d answer table because we consider all possible starting nodes at same time and size of a microset is in O(b); parent and marked signals are assumed to be fixed for each of these linear-time traversals. Our biggest issue is figuring out how to via pre-computation answer zero for answer (which microfind uses) if parent signal is invalid or all ancestors seen are non-marked OR non-zero and the internal-to-microset number of a node if it is the closest ancestor that is marked (assuming all nodes are inside the microset and we ignore "root" of a microset); we wish to know how to do this via a linear-time traversal for pre-computation.
+
+In short: each node wishes to know lowest non-proper ancestor that is marked; if it has no non-proper ancestors in the microset that are marked or parent signal is invalid (which will not happen with our current approach and application), we also would like to know. The output has no need for word-packing. A dummy node should not be considered a prospective ancestor. The result for each parent-signal/mark-signal/start-node permutation we use to add a value for a 3-d hash table (i.e. we have three keys that are associated with nestedness). We note that after we create them, we mostly do not unpack parent signal and mark signal; after we create them, we mostly use them in packed form; we do sometimes unpack mark signal -- we do so as we compute answer table.
+
 ## 2019-07-07
 
 We are working on Gabow-Tarjan DSU. We are correctly determining node groups and roots for each microset we plan to make. Now we need to fill out tables.
