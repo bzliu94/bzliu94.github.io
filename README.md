@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-07-20
+
+Got back from a trip to Belgium for a week. At the place we stayed at, there were two masks of characters from Five Nights at Freddy's horror video game. We had waffles, twice-fried fries, and seafood among other things (which the place is supposed to be known for). Watched two movies on the international legs for trip forward and for trip back -- Fantastic Beasts: TCOG and Lego Movie 2. Went to music instrument and train museums, architect-related historical sites. Apparently, sometimes trains receive power from wires from above and the connection is sustained by tension.
+
+We thought we had a bug with retrieving results from answer table due to mark signal issue. The problem really was that we are using number (i.e. intra-microset number) instead of the correct value that is name. Once we cleared this up, the pre-processing appears to be successful. Now, we just need to implement find in terms of microfind and initialize macrosets as singletons using microset roots (i.e. by using union tree structure).
+
 ## 2019-07-08
 
 We are constructing micro, number, node, parent, marked mappings correctly. Parent and marked signals are word-packed. We are working on answer table, which involves re-constructing a forest (or a tree with dummy root) with all possible marked 0/1 patterns. We know parent tables are valid without performing two suggested checks (i.e. one for boundedness and one for acyclicity) by only considering parent patterns for actual microsets we see from cutting up the input union tree. Then, we spend time in O(b) for a linear-time check for pre-order traversal of a microset tree to correctly retrieve answer for 3-d answer table because we consider all possible starting nodes at same time and size of a microset is in O(b); parent and marked signals are assumed to be fixed for each of these linear-time traversals. Our biggest issue is figuring out how to via pre-computation answer zero for answer (which microfind uses) if parent signal is invalid or all ancestors seen are non-marked OR non-zero and the internal-to-microset number of a node if it is the closest ancestor that is marked (assuming all nodes are inside the microset and we ignore "root" of a microset); we wish to know how to do this via a linear-time traversal for pre-computation.
