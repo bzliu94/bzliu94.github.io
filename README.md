@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-07-22 (again)
+
+Last big detail addressed for Gabow-Tarjan; it was a bug in the pseudocode from the article.
+
 ## 2019-07-22
 
 We have concluded that for us our specific lax Boolean MM approach we will not use to help implement strict Boolean MM approach; it is a dead end. We have an idea for strict Boolean MM, but we do not use that particular reduction. This is good in a sense, however, because then we have less obligation to make our lax Boolean MM approach be inordinately extensible.
