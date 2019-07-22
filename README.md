@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-07-22
+
+We have concluded that for us our specific lax Boolean MM approach we will not use to help implement strict Boolean MM approach; it is a dead end. We have an idea for strict Boolean MM, but we do not use that particular reduction. This is good in a sense, however, because then we have less obligation to make our lax Boolean MM approach be inordinately extensible.
+
+We are almost done implementing Gabow-Tarjan DSU structure. After that, we will tune for Gabow-Tarjan b, implement 2VCB-related VRB block forest, implement creation of our application graph, perform experiments, write an article.
+
 ## 2019-07-20
 
 Got back from a trip to Belgium for a week. At the place we stayed at, there were two masks of characters from Five Nights at Freddy's horror video game. We had waffles, twice-fried fries, and seafood among other things (which the place is supposed to be known for). Watched two movies on the international legs for trip forward and for trip back -- Fantastic Beasts: TCOG and Lego Movie 2. Went to music instrument and train museums, architect-related historical sites. Apparently, sometimes trains receive power from wires from above and the connection is sustained by tension.
