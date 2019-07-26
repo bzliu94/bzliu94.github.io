@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-07-25
+
+We have Gabow-Tarjan DSU structure and block forest working.
+
 ## 2019-07-22 (again)
 
 Last big detail addressed for Gabow-Tarjan; it was a bug in the pseudocode from the article.
