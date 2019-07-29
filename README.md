@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-07-29
+
+In the course of working on oracles for 2ECB, VRB, 2VCB, we found bugs in GD1 and FastVRB. For the former, we have issues with not setting edge types correctly and we are too strict about adding edges for step zero of transform; if parent of source edge's destination doesn't exist, we just do not add associated new edge. For the latter, we forgot that we need to choose a specific node to be start vertex for second layer (i.e. reverse layer); if we do not, the blocks we get as output may be incorrect. Because we refrain from explicit O(n \* log(n))-time sorts, a lot the orders are not well-defined (particularly when we use sets and dictionaries); we used to arbitrarily choose the first vertex in input vertex collection for reverse layer calls to be start vertex. These two details explain why sometimes we would get a correct answer and sometimes get a wrong answer. We fixed our implementations for these two algorithms.
+
 ## 2019-07-25
 
 We have Gabow-Tarjan DSU structure and block forest working.
