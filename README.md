@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-08-01
+
+We finished 2VCB oracle. Unfortunately, there is a flaw with our application of it to lax Boolean MM. We can wrap around and get results that bias towards true for 2-vertex-connectivity; we call this "pollution". If we start at an R node, if the result should be that we cannot reach an L node, we can visit a different L node and then visit a different R node that is then able to reach the target L node. This is why we are able to get correct answer if we randomly generate Boolean input matrices if n is small; the larger the value of n, the more opportunities we likely have to pollute using. At the very least, we now have 2ECB and 2VCB in our toolbox, should we need to use them later.
+
+Now, we are moving on to an approach for strict Boolean MM via custom construction of a Gomory-Hu-like cut-tree for specific application directed graphs. There is a portion which we assumed we could reduce to efficient lax Boolean MM, but that assumption does not hold anymore and so that portion will need to be re-worked.
+
 ## 2019-07-29
 
 In the course of working on oracles for 2ECB, VRB, 2VCB, we found bugs in GD1 and FastVRB. For the former, we have issues with not setting edge types correctly and we are too strict about adding edges for step zero of transform; if parent of source edge's destination doesn't exist, we just do not add associated new edge. For the latter, we forgot that we need to choose a specific node to be start vertex for second layer (i.e. reverse layer); if we do not, the blocks we get as output may be incorrect. Because we refrain from explicit O(n \* log(n))-time sorts, a lot the orders are not well-defined (particularly when we use sets and dictionaries); we used to arbitrarily choose the first vertex in input vertex collection for reverse layer calls to be start vertex. These two details explain why sometimes we would get a correct answer and sometimes get a wrong answer. We fixed our implementations for these two algorithms.
