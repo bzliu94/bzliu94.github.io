@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-08-04
+
+Gomory-Hu-like cut-tree for strict Boolean MM did not work out for us.
+
+We are planning on going back to re-visiting CS 61A material.
+
 ## 2019-08-01
 
 We finished 2VCB oracle. Unfortunately, there is a flaw with our application of it to lax Boolean MM. We can wrap around and get results that bias towards true for 2-vertex-connectivity; we call this "pollution". If we start at an R node, if the result should be that we cannot reach an L node, we can visit a different L node and then visit a different R node that is then able to reach the target L node. This is why we are able to get correct answer if we randomly generate Boolean input matrices if n is small; the larger the value of n, the more opportunities we likely have to pollute using. At the very least, we now have 2ECB and 2VCB in our toolbox, should we need to use them later.
