@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-08-06
+
+We are working on HW #10 for CS 61A. Specifically, we are conducting experiments on parallel-execute for two ways that it is implemented in the version of UCB Scheme (i.e. version 1.3.6) that we have.
+
 ## 2019-08-04
 
 Gomory-Hu-like cut-tree for strict Boolean MM did not work out for us.
