@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-08-27
+
+We've experienced some turmoil over the past two weeks; the machine we have been using became unusable and I got a second-hand machine as a replacement. Also, we have a new lead for signed f.p. matrix multiplication.
+
 ## 2019-08-06
 
 We are working on HW #10 for CS 61A. Specifically, we are conducting experiments on parallel-execute for two ways that it is implemented in the version of UCB Scheme (i.e. version 1.3.6) that we have.
