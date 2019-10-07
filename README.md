@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-10-07
+
+We are working on implementing 2-d range tree.
+
 ## 2019-09-08
 
 We are halting our work on fast matrix multiplication.
