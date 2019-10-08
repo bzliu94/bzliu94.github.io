@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-10-08
+
+We are working on creating test boxes.
+
 ## 2019-10-07
 
 We are working on implementing 2-d range tree.
