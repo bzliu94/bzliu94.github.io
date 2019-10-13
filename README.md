@@ -3,6 +3,17 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-10-13
+
+We were working on de Berg and Haverkort 2003 significant-presence query 1-d structure. We made 1-d exact and approximate test box sets in time linear in n, where n is number of points, correctly.
+
+We're following another lead now -- it is to do with Durocher et al. 2013.
+
+Relevant resources:
+
+* de Berg and Haverkort - Significant-presence range queries in categorical data (2003)
+* Durocher et al. - Range majority in constant time and linear space (2013)
+
 ## 2019-10-08
 
 We are working on creating test boxes.
