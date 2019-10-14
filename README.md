@@ -3,6 +3,14 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-10-14
+
+We are working on considering Xue et al. 2018 partially-in exact range closest-pair query.
+
+Relevant resources:
+
+* Xue et al. - Approximate range closest-pair search (2018)
+
 ## 2019-10-13
 
 We were working on de Berg and Haverkort 2003 significant-presence query 1-d structure. We made 1-d exact and approximate test box sets in time linear in n, where n is number of points, correctly.
