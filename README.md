@@ -3,6 +3,18 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-10-20
+
+About half a week ago, we decided to stop working on using partially-in exact range closest-pair query.
+
+We are working on range mode query and higher-dimensional approximate range diameter query.
+
+Relevant resources:
+
+* Petersen - Improved bounds for range mode and range median queries (2008)
+* Oh and Ahn - Approximate range queries for clustering (2018)
+* Lovisolo and da Silva - Uniform distribution of points on a hyper-sphere with applications to vector bit-plane encoding (2001)
+
 ## 2019-10-14
 
 We are working on considering Xue et al. 2018 partially-in exact range closest-pair query.
