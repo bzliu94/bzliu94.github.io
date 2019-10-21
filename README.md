@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2019-10-21
+
+We are now focusing on pursuing range mode query.
+
 ## 2019-10-20
 
 About half a week ago, we decided to stop working on using partially-in exact range closest-pair query.
