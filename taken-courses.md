@@ -16,7 +16,7 @@ Fall 2007
 
 | Class | Title | Instructor(s) |
 | ---- | ---- | ---- |
-| Chem 1A | General Chemistry | Majda, Marcin <br> (and Stacy, Angelica) |
+| Chem 1A | General Chemistry | Stacy, Angelica <br> (and Boering, Kristy <br> and Majda, Marcin) |
 | CS 61A | Structure & Interpretation of Computer Programs | Harvey, Brian |
 | Math 1A | Calculus | Hald, Ole H. |
 | Physics 24 | Freshman Seminar: The Stuff that Stuff is Made of | Jacobsen, Robert |
@@ -138,5 +138,9 @@ C11B - Introduction to C Programming II - Thakkar, Shilpa (Summer 2007)
 *Brigham Young University Independent Study (BYU-IS)*  
 Health 41 - Health Education, Part I - Olsen, Phil (Spring 2005)  
 Jogging 41 - Jogging - Abbott, Denise (Spring 2005)
+
+*Portland State University (PSU)*  
+Math 251 - Calculus I - Warner, Marty (Fall 2005)  
+Math 252 - Calculus II - Warner, Marty (Winter 2006)
 
 
