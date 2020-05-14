@@ -1,8 +1,44 @@
-[Taken courses](taken-courses)
+[Taken courses](taken-courses) · [Class repair](class-repair) · [Projects](projects)
 
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2020-04-22
+
+I'm still getting my ducks in a row before focusing on writing an article.
+
+I am backing up documents for five more Math 1A course offerings -- Stankova Spring 2009, Ogus Spring 2010, Olsson Fall 2008, Sethian Fall 2010, Haiman Spring 2014. This is for our class repair document. Then, I can proceed with conversation portion of class repair document. We need to finish adding five Borcherds semesters for Math 1A as well. We know that we are no longer adding Math 1A course offerings after these ten courses, given that we have a stated strategy of selecting certain classes as seeds (though not all seeds are chosen to be a seed for the same reason -- e.g. they may be a seed because they have quizzes we like or because they have exams we like) and of expanding our offering list only if we can find a TA page that also mentions another Math 1A offering we have not seen yet. So, while we have a lot of work left, we at least can be reasonably confident that we have a finite known amount of work left for backing up courses. Of course, we need to wrap up by messaging students, TA's, and professors (after we devise a strategy that takes into account possibility of irritating people given what we have already said to people). We will need to print our post-repair documents.
+
+We should also mention that we are making use of many extension for Firefox, including: Simple mass downloader, Copy All Tabs, Easy Youtube Video Downloader Express, Vimeo Experience. Also, we are using the online service at vimeo-download.com. We are also using Pale Moon, a fork of Firefox browser that stays with providing XUL capabiliites. Then, we are able to use an extension called ScrapBook X. This means we are going back to using a scrapbook-like extension after a hiatus beginning in around late 2007. It allows us to be arguably much more productive in our task of becoming less exposed to risk of disappearing webpages. (For example, we can bookmark messages sent through Cal alumni network given they have no built-in way to back up messages or we can back up course-related documents that may or may not be on Internet Archive currently.) Also, using it is convenient given that we can automatically record certain details (e.g. when we backed up and original address), we can use folder hierarchies, we can e.g. rename titles while keeping old titles alive in a sense as well.
+
+Also, we need to make sure to back up TA lists for classes we back up (e.g. via NinjaCourses while it is still up). We need to back up old physics textbook announcements (i.e. before Fall 2000 and possibly at and after 1997 -- we note that early on the records may be a bit spotty). We may need to purchase a hard copy of fourth edition of Giancoli.
+
+Coronavirus is making news.
+
+We also plan on adding pages regarding personal projects and regarding assorted topics that cross my mind (e.g. how to explain the fact that electricity that ends up at your power outlet travels so quickly, for some definitions of "explain" and "travels").
+
+We will need to combine and condense our to-do lists and e.g. contact people from high school about Science Ambassadors activity for photo-filled PDF files (because while we used to have them, we ended up losing them as part of mistakenly losing around two years of emails in general for our personal email collection). We will need to collect our "stickies" (i.e. things we wish to do but have no direct way of resolving in the short-term) and possibly re-print them. We will need to e.g. donate some items when we get back to Oregon. We need to remove watermarks from documents we have backed up that were at coursehero.com. We need to print schedules using rules mentioned in our class repair document. We need to scan some documents we currently only have in physical form.
+
+We need to email some people from high school about which edition (ninth?) was used for "Introduction to Fiction" textbook for AP Literature. We would like to add a projects page talking (e.g. for sugar printer, moire-and-air-based touch graph interface). We are waiting for a check to be mailed back from Tang Center so that we can shred it after checking that it was not cashed in. We ought to remember that we have staggered phone appointments for Freedom Trail Clinic and yet-to-be-made appointments for blood draw at some Quest Diagnostics location. We ought to not forget to attend those appointments and to make follow-up appointments s.t. they remain in some sense staggered (until we start going back to in-person appointments). We are waiting for a response about possibly having two dates for second withdrawal from Ms. Samson, who is an advisor at College of Engineering. We are waiting for a response from Quest Diagnostics regarding a mistake for billing from 2018. We are waiting for a response from social worker regarding time of day for next appointment; alternatively, we can call front desk at FTC at some point. We need to make sure we are okay with having Amazon be missing details for certain purchases from a long time ago -- possibly by backing up as many orders as we can s.t. we lack emails for them but haven't yet lost details for via Amazon's website directly using a scrapbook extension. We need to call Dr. Chan from Tang Center about what the abbreviation "AVC" means. We have to remember to repeatedly order refills for secondary medications via CVS (and to take advantage of free shipping while it is still an option).
+
+We want to finish conversations (as we have said), we wish to take a couple of classes.
+
+We also (obviously) wish to get a job.
+
+Our sense is that typing up blog posts will help us get through this work faster.
+
+We would like to create pages for Math 1A and Physics 7B. For Math 1A, for example, we would like to make notes about the custom edition textbooks used for part of the past. For Physics 7B, for example, we would like to make notes about worksheet/lab workbook used.
+
+We also would like to re-ask a specific person whose name is Angela J. via Cal alumni network whether they lived on eighth floor in Unit 2 for freshman year. We only know that the right person probably has a first name of Angela. Yes, this part is awkward.
+
+Finally, we would like to transfer all our tabs from our secondary laptop and tabs and notes from our phone.
+
+In the future, we would like to be more specific about which additional classes we would like to take.
+
+## 2019-11-13
+
+It turns out that range mode query (in the way that we think of using it) is not enough even for a stepping stone approach for BMM. Still, it helps to consider it. We have a different lead now that it it is best for us not to go into too much detail into here for now.
+
 ## 2019-10-21
 
 We are now focusing on pursuing range mode query.
