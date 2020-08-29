@@ -3,6 +3,106 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2020-08-28
+
+I had been hoping to avoid adding blog entries until I am ready to directly tackle conversations for class repair endeavor. However, avoiding use of blog is in this situation beginning to have a non-trivial negative effect on my productivity. While now the gap between when we were once freely considering matrix-multiplication-related algorithms (from November 2019) and when we will be ready to work directly on writing an article on that subject will not be as clean, the alternative is that we push the date when we are ready to write the article back. The more we push dates back, the more there is risk that we may get front-run. Of course, we are also excited by the idea of writing said article and so being able to return to writing blog entries also has a separate good effect on morale. We are overly fetishizing the nadir to the extent that we are trapping ourselves in it. Also, the straw that breaks the camel's back is a conversation we are having with a teacher for purpose of re-constructing details for an AP English Language class from senior year in high school that we believe we can end earlier and with better outcomes if we first relieve some of the stress on our mind that results from having a large backlog of ideas and details that we have not yet committed to paper or electronic documents.
+
+I talked to a psychiatrist today and they suggested that I perhaps do not have to force myself to not multi-task for some definition of multi-tasking, even if it seems to me that currently I have to be quite careful with certain tasks facing me currently (e.g. the conversation with a high school teacher).
+
+Where do we begin? Our backlog is so large. Even though we have breadcrumbs spread across many dated notes, doing justice to our thought process will take some effort.
+
+Our birthday is coming soon -- we will be turning thirty-one.
+
+I have an idea of a page for our GitHub website that covers scientific details that we find quite meaningful. For example, that power lines may look covered but may just be coated with material for purpose of being resistant to weather and may not be covered s.t. they are non-conductive. That the explanation of how electric energy or signals can travel at close to speed of light because it's better to consider electic behavior using idea of fields instead of primarily electron movement; the changing fields lead movement in electrons. That chemical bonds release or absorb energy based on trapping energy -- if energy cannot be trapped, then energy escapes. That this touches on how nuclear fission bombs work -- we have a favorable nuclear fission isotope trend s.t. nucleon binding energy decreases; if we know how much of each isotope we end up with, we can then estimate energy released and because the energy released tends to be quite large it also becomes reasonable to re-describe that energy using mass -- such overall mass change can be called mass defect. Microwave ovens heat because field gets consumed. Special relativity results from assuming speed of light is constant and what happens when one considers non-accelerating reference frames; general relativity results from assuming the same thing but when one considers possibly accelerating reference frames; clearly, non-accelerating is a subset of possibly accelerating. One wonders whether if a person who is accelerated to close to the speed of light that not only do they age more slowly but also that they via their interactions with any surrounding structure moving at the same speed (i.e. things stationary in the reference frame of the fast person) still perceive time to be moving at an unimpeded rate (of course for some definition of "unimpeded"); this seems to be assumed to be the case by many who consider twin paradox for special relativity. We still do not quite grasp resolution of twin paradox for SR. Christmas lights that are roughly wired in series still can work if many bulbs sequentially fail because short-circuits form that allow current to flow past each broken bulb (though this makes each bulb a little bit more expensive). Also, we believe we can think about quantum computing as being about preserving a pre-collapse world, choosing worlds, and making sure the environment is sterile. Correspondence principle when applied to double-slit experiment says that with enough particles we get classical physics; also, Feynman uses difference in outcomes for after-slit-and-before-screen-collapse and the experiment with after-slit-and-at-screen-collapse as being partially explainable using path integrals -- the different paths we can take are related to selection of worlds. Also, it makes sense that once we select a world, that it is internally consistent; this is related to how entanglement does not transmit information -- presumably it is occasionally hard for us to consistently select a world over another.
+
+I have an idea for a n x n binary touch interface that is considerably more affordable than if one constructs it via a straightforward way (i.e. using a solenoid for each pixel). The straightforward way has cost with a non-trivial coefficient for O(n ^ 2). Our way has cost with lower coefficient for O(n ^ 2) and the main cost for it comes from coefficient for O(n). We have a rotating drum with O(n) electromagnets in a row spaced suitably far apart from each other so that they roughly do not interfere with each other. For each pixel, we have a piece of iron that is attracted when an electromagnet from the drum is placed near it and turned on. Alternatively, a pixel will get repelled via a spring dedicated to it; this of course means attraction s.t. it is meaningful must be strong enough to overcome the spring force. Presumably the cost of a spring is relatively low. As the drum spins, we keep updating a row of a screen. We allow a row to be updated by unlocking it using a multi-toothed rod that we momentarily move out of place. Once a row has been locked, an associated z-level pattern survives being pushed by a human hand. We have three buffers -- each buffer is associated with a screen. When a frame for a buffer is completed, we move the buffer into place by raising it. The buffers can be felt because they may lift up a ball for each pixel. We have smooth transition between buffers s.t. we cannot tell there is more than one buffer because we may raise a buffer and lower a buffer at the same rate and at the same time. Also, a third middle buffer is used to make sure unchanged raised pixels stay in place. An issue remains as to how rotating can push pixels up and down. We can make sure each pixel has a leg that is curved and have a sleeve for the leg s.t. general one-directional force gets redirected to have a different one-directional force that causes movement that eventually pushes a pixel up. (We haven't thought through exactly what would be an adequate approach, but we believe there ought to be one.) Many of the legs and sleeves we expect to be able to 3-D print (or at least we can 3-D print whatever actually ends up mediating the force so as to push pixels up if not by using sleeves). We also need to be able to move the buffers up and down at fixed speeds; whether we can do better for this than by using stepper motors and have the motion be more smooth is an open issue. We also have to consider specifically how to unlock a row. At any rate, we expect to be able to have quite a large frame rate. Also, if we have high resolution, we have to figure out a better way to space drum-head electromagnets out sufficiently.
+
+We have to repair our most recent laptop. We need to open it up to get the right part number or possibly FRU for the lid. We need to purchase an upper lid, keyboard.
+
+We have to purchase books for AP Literature. The books are Kennedy/Gioia 8th edition, Macbeth, Brave New World.
+
+We have to contact the teacher for AP Literature -- Ms. Minor -- from senior year in high school (i.e. academic year 2006-2007). We also have to contact Robert regarding design analysis for Art Practice 98 DeCal from Spring 2008. We also need to finish schedules for certain semesters that require repair for undergraduate years. We need to -- once we are dealing with conversation phase for class repair -- finish the conversation portion of class repair document; this entails emailing people to say thank you to them and possibly asking parting questions, depending on the target person. This will require diagramming out conversations.
+
+After finishing conversations for class repair, then we tackle article. After article, we tackle finishing certain classes -- e.g. CS 61A, CS 169, networking EE class.
+
+We have found scrapbook add-on and add-ons for scrapbook add-on useful.
+
+We have to finish imageboard back-ups via Internet Archive. Also, we need to investigate forum software.
+
+We need to email a person from high school asking about Mythology book for AP Literature. We need to ask them if they are willing to share vBulletin 3.0.0 beta 5 software (so we can restore forum data without resetting style templates), which they may either have already or they can download via vBulletin member section; we lack member login information and we may not have paid. Presumably, the cost is $160 for forever license (for this one version and not for updates). We may wish to offer $80 for being able to log in member section for vBulletin website, if we have not paid in the past. (They may wish to be nice and give a copy of the software anyway.) It would be nice to be able to take a scrapbook snapshot or screenshot of the member's section. We would have to provide license number or customer ID or ask them to give their own email address. Finally, we can offer to give them unlocked versions of later versions (e.g. 3.8.4 and 5.4.3). For some of these other versions, we have done custom work towards unlocking them completely. We are interested in vanilla to-upload files and not-to-upload utility files. Our to-upload files for 3.0.0 beta 5 seem to have issues. Also, we have had issues with corrupted binaries (given they were transferred via ASCII mode) -- even binaries stored in MySQL database. Also, we should recover suitable environment for non-version-five vBulletin software using older machine and take scrapbook snapshots or screenshots of back-up screen for administrator control panel.
+
+We need to donate books and music CD's.
+
+We need to unlock a hard drive with a password (possibly via an external service); we need to make an effort to check if the hard drive model is supported or send it in and have the service check manually if the model is not explicitly listed on said service's list of hard drive models supported. Some expected payoff from unlocking the hard drive is seeing our Arch Linux distribution, whether we have college application or college admission essays backed-up or scrapbooked, whether we have bSpace documents downloaded that we no longer have access to. (There are also some risks.) An estimate (excluding a certain super-exotic option) is $100, with some give or take for shipping. Apparently the $100 fee does not apply if they cannot fix it, though in some sense shipping fees may still be incurred.
+
+We have to ask what "AC" means to an AP English Literature teacher; it was mentioned by Mr. Hardin in a 2010-2011 academic year AP English Literature syllabus.
+
+We need to ask Tang Center CPS therapist (possibly Dr. Chan) what "AVC" means.
+
+We need to follow up with counselor at College of Engineering to see if they have records of non-medical withdrawals and re-admissions to see if e.g. we were granted a second withdrawal before we had finished certain forms or that certain fax dates can be corroborated. This may be delayed via coronavirus.
+
+Some things we may not resolve in a short amount of time -- e.g. where our Timbuk2 messenger bag went. A bunch of clothes submitted via hospitalization from May 2008 we can assume we essentially have no way of retrieving.
+
+We need to collect websites and blogs for AP Literature for Ms. Minor, Mr. Duncan, Mr. Hardin from Westview High School.
+
+We would like to finish up search for an Angela from floor eight at Cunningham Hall for freshman year (i.e. 2007-2008); in particular, this involves at least contacting an Angela Jew (via Cal alumni search or Facebook) to ask them if they were there.
+
+We may wish to back-up copies of Minecraft maps for Blockeley and Westview. The former is interesting because of possible re-construction of Unit 2 Cunningham hall floor eight.
+
+We need to pay fees to middle-man pharmacy (e.g. Pelham or eventually even Genoa).
+
+We need to update our LinkedIn and have a portfolio.
+
+We need to get a job or at least do some volunteer work before doing so.
+
+We need to clean our room.
+
+We should mention to Ms. Minor that we have more questions regarding Mythology because it seems to be somewhat close to being a textbook (s.t. we have already asked a lot of questions about the two other actual textbooks assigned).
+
+We need to keep attending blood draw clinic, therapist appointments, social worker appointments; we need to continue to pick up main medications and side-effect medications.
+
+We would like to create pages for Math 1A and Physics 7A and more generally for Math 1A/1B/53/54/55 and Physics 7A/7B/7C. For Math 1A, for example, we would like to make notes about the custom edition textbooks used for part of the past. For Physics 7B, for example, we would like to make notes about worksheet/lab workbook used. For aforementioned Math series, we would like to explain why Borcherds says a certain edition is not useable -- this has to do with textbook section that temporarily was not required and was omitted; to remember the exact details, we refer to our scrapbook pages for math department webpages that deal with undergraduate math course outlines. Possibly the section is section 9.6? Borcherds himself has told us via email that he does not remember why a certain edition is not suitable; to know for sure (and we knew essentially for sure at one point!) we must compare multiple undergraduate math course outlines and how they changed over the years. Also, it's worth noting we also depend on the name of a section as detailed via a slide on a professor's webpage at some point to know what edition of a math textbook was used for that professor for some semester.
+
+(Yes, some of this is repeated from the previous blog post; we will need to consolidate eventually.)
+
+Some teachers or TA's we asked for help from we need to follow-up with or send our plans to (given that they asked for them).
+
+We should note our T440s has a fan that needs oiling.
+
+We have to remember to pay certain medical-insurance-related (Quest-lab-related?) fees.
+
+We need to implement the algorithm we mention in our matrix multiplication algorithm article. We need to include diagrams and show that the approach is better for at least some parameter values. We may wish to eventually publish to either arXiv and/or beyond.
+
+We need to update our resume.
+
+We need to acknowledge that writing a blog also helps our lizard brain as we can make sure we show activity on our profile page.
+
+When we get back to Oregon, we ought to make an effort to group documents for classes at or before junior year into binders (e.g. we may need to purchase binders and example classes are AP Biology and Anatomy and Physiology and AP Language). It may help to bring a copy of my high school transcript.
+
+We may wish to message Zhenhuan L. or Ioana L. or Kristin M. about science ambassador program at ONPRC for purpose of getting photos (e.g. via PDF files distributed by the coordinator that I now lack) involving myself or my mentee or both. I may have to ask them and/or check documents in Oregon in a filing cabinet to remember their name or if I have a photo printed out.
+
+I will need to make a diagram of the TouchGraph device mentioned above and we may wish to construct a prototype and publish an engineering article about it; an emphasis may be on price.
+
+We may later wish to revise our blog posts.
+
+We will need to remember to think about parents, sister, nephews/nieces, relatives, cats. For example, when their birthdays are.
+
+Also, we may wish to give some thought occasionally to whether to interact with people from high school or college.
+
+As we mentioned in the previous blog entry, we also may find it useful to create a document filled with "stickies".
+
+We may wish to scrapbook our conversations (e.g. via Cal alumni network or Facebook).
+
+Do we have old conversations for main Facebook account fairly-extensively backed up (i.e. possibly before they got deleted due to our choosing to deactivate that account)?
+
+We may wish to ask relatives (i.e. parents or sister) as to whether they have accounts that we borrowed to make certain purchases so that we can scrapbook purchase details. An example reason this may have occurred is that we may have wished to use someone else's Prime subscription.
+
+There may be countless other small details we have left out that are roughly related to the details we have included.
+
+We may wish also to donate our copy of Battlefield 2.
+
+For backing up imageboard pages, we will make use of e.g. copy-urls XUL add-on together with Scrapbook X add-on for Pale Moon.
+
 ## 2020-04-22
 
 I'm still getting my ducks in a row before focusing on writing an article.
