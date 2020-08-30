@@ -3,6 +3,30 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2020-08-29
+
+We have six links that we ought to skim through to find out about miscellaneous writing activities for AP English Literature.
+
+### Blogs or course information pages
+
+Ms. Minor
+* 2008-2009 (blog)  
+https://wviewaplitminor.blogspot.com/
+
+Mr. Duncan
+* 2008-2009 (blog)  
+http://wviewaplitduncan.blogspot.com/
+* 2009-2010 (blog)  
+http://duncanwildcatap.blogspot.com/
+* 2010-2011 (blog)  
+http://mrduncanaplit.blogspot.com/
+
+Mr. Hardin
+* 2008-2009 (blog)  
+http://wviewaplithardin.blogspot.com/
+* 2010-2011 (course information page)  
+https://sites.google.com/a/beaverton.k12.or.us/ryanhardin/
+
 ## 2020-08-28
 
 I had been hoping to avoid adding blog entries until I am ready to directly tackle conversations for class repair endeavor. However, avoiding use of blog is in this situation beginning to have a non-trivial negative effect on my productivity. While now the gap between when we were once freely considering matrix-multiplication-related algorithms (from November 2019) and when we will be ready to work directly on writing an article on that subject will not be as clean, the alternative is that we push the date when we are ready to write the article back. The more we push dates back, the more there is risk that we may get front-run. Of course, we are also excited by the idea of writing said article and so being able to return to writing blog entries also has a separate good effect on morale. We are overly fetishizing the nadir to the extent that we are trapping ourselves in it. Also, the straw that breaks the camel's back is a conversation we are having with a teacher for purpose of re-constructing details for an AP English Language class from senior year in high school that we believe we can end earlier and with better outcomes if we first relieve some of the stress on our mind that results from having a large backlog of ideas and details that we have not yet committed to paper or electronic documents.
