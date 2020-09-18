@@ -5,7 +5,7 @@
 # Brian's perambulations
 ## 2020-08-29
 
-We have six links that we ought to skim through to find out about miscellaneous writing activities for AP English Literature.
+We have seven links that we ought to skim through to find out about miscellaneous writing activities for AP English Literature.
 
 ### Blogs or course information pages
 
@@ -24,7 +24,8 @@ http://mrduncanaplit.blogspot.com/
 Mr. Hardin
 * 2008-2009 (blog)  
 http://wviewaplithardin.blogspot.com/
-* 2010-2011 (course information page)  
+* 2010-2011 (blog and course information page)  
+http://hardinwildcatap2.blogspot.com/  
 https://sites.google.com/a/beaverton.k12.or.us/ryanhardin/
 
 ## 2020-08-28
