@@ -3,6 +3,12 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2021-01-18
+
+As much as we would like to highlight the tasks we have regarding AP English Literature, we also would like to get back to the benefit of having a blog -- being able to update and feel as if we're making progress every day.
+
+Much has happened in our quest to get competitive lax BMM algorithms. We have an O(n ^ 2.4)-time approach based on Durocher et al. 2011 range mode query and reduction via Wilkinson 2012. Then, we have an O(n ^ 2.18 * log(n))-time approach based on bootstrapping/boosting using Berman/Kasiviswanathan 2007 (1 + epsilon, 2) approximate distance oracle for directed weighted input graphs with three-layer graph. Finally, we believe we may be able to get an O(n ^ 2 * log(n) ^ 5)-time algorithm based on Gutenberg et al. 2020 approximate weighted incremental SSSP via Roditty/Zwick 2004 reduction by extending to have number of substructures not in O(log(n)) but in O(n * polylog(n)), storing pre-emptive distance estimate minimums and argmax-related structures, changing base and thresholds so that we support epsilon >> 1, and using exponent-based implicit numbers. The actual time, assuming the approach works, we estimate may be larger or less by at most a factor of up to O(log(n) ^ 2).
+
 ## 2020-08-29
 
 We have eight links that we ought to skim through to find out about miscellaneous writing activities for AP English Literature.
