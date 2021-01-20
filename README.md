@@ -3,6 +3,10 @@
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
 # Brian's perambulations
+## 2021-01-19
+
+We also want to upload our work on Thorup/Zwick 2005 and Thorup/Zwick 2006 first spanner and emulator. We do not see a way of using them for our lax BMM application, but given that we spent quite a bit of time going through aforementioned two articles and identifying typos and mistakes, figuring out ways to fill in missing proofs, and understanding the important bits of reasoning, we believe we should make implementations for them more widely available. Much of the content of the articles is in proving theoretical bounds (e.g. by showing existence of certain relatively short paths).
+
 ## 2021-01-18
 
 As much as we would like to highlight the tasks we have regarding AP English Literature, we also would like to get back to the benefit of having a blog -- being able to update and feel as if we're making progress every day.
