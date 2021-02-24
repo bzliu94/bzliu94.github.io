@@ -1,4 +1,4 @@
-[Taken courses](taken-courses) · [Class repair](class-repair) · [Undergraduate freshman year dorm floor layout](freshman-year-dorm-floor-layout) · [Projects](projects) · [High school details](high-school-details) · [Big personal problems](big-personal-problems)
+[Taken courses](taken-courses) · [Class repair](class-repair) · [Undergraduate freshman year dorm floor layout](freshman-year-dorm-floor-layout) · [Projects](projects) · [High school details](high-school-details) · [Big personal problems](big-personal-problems) · [Gambles](gambles)
 
 <img title="A gem" src="shape1 - cropped, resized, and cleaned.png">
 
